@@ -1,0 +1,11 @@
+$primaryColor: #000042;
+$secondaryColor: rgba(40, 52, 92, .75);
+$textColor: #FFFFFF;
+
+@mixin boxbackground ($width, $height){
+    background-color: $secondaryColor;
+    border-radius: 10px;
+    padding: 1em;
+    width: $width;
+    height: $height;
+}

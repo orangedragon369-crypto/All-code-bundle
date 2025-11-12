@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="main.js" defer></script>
+    </head>
+    <body>
+        <header><h1>Prisoners Dilema</h1></header>
+        <main>
+            <select id="player1" name="player">
+                <option value="deffect">Deffect Always</option>
+                <option value="coop">Cooperate Always</option>
+                <option value="randD">Randomly Deffects 10% of the time</option>
+                <option value="cTill">Cooperates till opponent deffects, then deffects only</option> 
+                <option value="random">Random cooperate or deffect (50/50 split)</option> 
+                <option value="forgive">Will cooperate by default, and respond to being deffected by deffecting once</option>
+            </select>
+            <span>&ensp;VS.&ensp;</span>
+            <select id="player2" name="player">
+                <option value="deffect">Deffect Always</option>
+                <option value="coop">Cooperate Always</option>
+                <option value="randD">Randomly Deffects 10% of the time</option>
+                <option value="cTill">Cooperates till opponent deffects, then deffects only</option> 
+                <option value="random">Random cooperate or deffect (50/50 split)</option> 
+                <option value="forgive">Will cooperate by default, and respond to being deffected by deffecting once</option>
+            </select>&ensp;
+            <input type="number" id="num" placeholder="How many rounds?">&ensp;
+            <button type="button" id="btn">Run Game</button>
+            <div class="veiw" style="justify-content: space-around;"><h3><b>Results</b></h3></div>
+            <div class="view">
+                <div id="result1" class="result"></div>
+                <div id="result2" class="result"></div>
+            </div>
+            <div id="points" class="view"></div>
+        </main>
+    </body>
+</html>

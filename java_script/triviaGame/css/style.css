@@ -1,0 +1,64 @@
+.cont, .header{
+    display: flex;
+    justify-content: space-around;
+}
+
+.col{
+    flex-direction: column;
+}
+
+body {
+    width: 100%;
+    height: 70vh;
+    margin: 0;
+}
+
+#menu{
+    height: 250px;
+}
+
+#start{
+    width: 50px;
+}
+
+.header, .fill{
+    width: 100%;
+}
+
+main {
+    height: 100%;
+}
+
+.header{
+    height: 75px;
+    background-color: aquamarine;
+    justify-self: flex-start;
+    align-items: center;
+}
+
+a, .link{
+    text-decoration: none;
+    color: black;
+}
+
+.link{
+    font-weight: 900;
+    font-size: large;
+}
+
+#rSlashW{
+    position: absolute;
+    top: 20vh;
+    right: 20vw;
+    height: 60vh;
+    width: 60vw;
+    border-radius: 20px;
+    align-items: center;
+    font-weight: 800;
+}
+
+.see-not {opacity: 0;}
+
+.red, .green{opacity: 1;}
+.red{background-color: #f00;}
+.green{background-color: #00da0f;}

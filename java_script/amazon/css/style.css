@@ -1,0 +1,154 @@
+header {
+  display: flex;
+  background-color: black;
+  color: white;
+  height: 15vh;
+  align-items: center;
+}
+
+.cart-head {
+  color: #c5823b;
+}
+
+.search, .btn {
+  padding: 4px;
+  margin: -3px;
+  border: 0;
+}
+
+.search {
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  width: 30vw;
+  height: 20px;
+}
+.search:hover {
+  background-color: #e3e3e3;
+}
+
+.btn {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #c5823b;
+  height: 28px;
+  width: 8vw;
+}
+.btn:hover {
+  background-color: #ff8400;
+}
+
+.logo-on-black {
+  width: 125px;
+  background-position: left 0px top -120px;
+  background-image: url("../images/nav-sprite-global-2x-reorg-privacy._CB546805360_.png");
+  height: 40px;
+  background-size: 350px;
+}
+
+.set-bottom {
+  margin-top: 30px;
+}
+
+.cont, body, .ainer {
+  display: flex;
+}
+
+.ainer, body {
+  flex-direction: column;
+}
+
+.lighten-frost2 {
+  padding: 30px;
+}
+
+.lighten-frost {
+  padding: 10px;
+}
+
+.between, body {
+  justify-content: space-between;
+}
+
+main {
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer {
+  background-color: black;
+  color: #333333;
+  text-align: center;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+.cart {
+  background-image: url("../images/nav-sprite-global-2x-reorg-privacy._CB546805360_.png");
+  background-size: 450px;
+  height: 90px;
+  background-position: left 4px top 168px;
+  width: 90px;
+}
+
+.cart-body {
+  color: #8585ff;
+}
+
+.center {
+  align-self: center;
+  text-align: center;
+}
+
+h3, .hug, body {
+  margin: 0px;
+}
+
+.total {
+  font-weight: 600;
+  color: #bb0000;
+}
+
+.no-bold {
+  font-weight: normal;
+  font-size: 1em;
+}
+
+#order-box, .item-box {
+  border: solid 1px #999999;
+}
+
+#order-box {
+  height: 190px;
+  width: 25vw;
+}
+
+.item-box {
+  width: 65vw;
+  justify-content: space-between;
+}
+
+.space, #order-box, .item-box {
+  padding: 5px;
+  margin: 5px;
+}
+
+.cart-tittle {
+  font-weight: 500;
+  line-height: 35px;
+}
+
+#order {
+  background-color: #ffcc00;
+  border-radius: 5px;
+  border: initial;
+  width: 21vw;
+  height: 30px;
+  margin: 10px 2vw 0 2vw;
+}/*# sourceMappingURL=style.css.map */

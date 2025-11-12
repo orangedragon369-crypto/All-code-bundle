@@ -1,0 +1,11 @@
+{
+  "name": "playlist",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "watch:sass": "sass --watch style/style.scss:style/style.css --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.72.1"
+  }
+}

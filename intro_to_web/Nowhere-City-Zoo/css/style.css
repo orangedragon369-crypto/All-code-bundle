@@ -1,0 +1,116 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f6f6f6;
+  color: #333;}
+header {
+  background: #8c6239;
+  color: white;
+  text-align: center;
+  padding: 2rem;}
+h1, h2 {
+  margin: 0.5rem 0;}
+main {
+  padding: 2rem;}
+.intro, .facts, .gallery {
+  margin-bottom: 2rem;}
+ul {
+  list-style-type: "🐒 ";
+  padding-left: 1rem;}
+.gallery img {
+  margin: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);}
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;}
+#arm, #turd, #box{
+  opacity: 0;}
+#arm, #turd{
+  position:absolute;
+  bottom: 20px;}
+#arm {
+  left: 0;
+  width: 200px;
+  height: 30px;
+  background-color: #8c6239;}
+#box {
+  position: relative;
+  width: 230px;}
+@keyframes moveRight {
+  0% { 
+    left: 0;
+    opacity: 0; 
+  }
+  20%{
+    opacity: .5;
+  }
+  40%{
+    opacity: 1;
+  }
+  100% { 
+    left: 17vw; 
+    opacity: 1;
+  }}
+.animate {
+  animation: moveRight 1s forwards;}
+#turd{
+  right:0;
+  width: 50px;
+  height: 50px;
+  background-color: #572e04;}
+@keyframes throw {
+  0% { 
+    left: 0;
+    opacity: 0; 
+  }
+  20%{
+    opacity: .5;
+  }
+  40%{
+    opacity: 1;
+  }
+  80%{
+    right:0;
+  }
+  100%{
+    bottom: 5vh;
+    left:75vw;
+    opacity: 1;
+  }}
+.thrown {
+  animation: throw 1s forwards;}
+duck{
+  position: absolute;
+  line-height: 87%;
+  right: 0;
+  bottom: 10vh;}
+#animateBtn {
+  background-color: red;
+  font-weight: bolder;
+  border-radius: 1em;}
+.thrower{
+  animation: movearm 1s forwards;
+}
+@keyframes movearm {
+  0% { 
+    left: 0;
+    opacity: 0; 
+  }
+  20%{
+    opacity: .5;
+  }
+  40%{
+    opacity: 1;
+  }
+  80%{
+    right:0;
+  }
+  100%{
+    bottom: 10px;
+    left:220px;
+    opacity: 1;
+  }}

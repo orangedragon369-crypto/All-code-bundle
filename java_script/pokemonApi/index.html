@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="scripts/apiScripts.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h3 class="poki-window">Pokemon</h3><br>
+        </header>
+        <main class="poki-window">
+            <div>
+                <div>
+                    <input type="text" id="find" placeholder="Looking for something?">
+                    <input type="submit" id="btn" value="Load" onclick="find();">
+                </div>
+                <div>
+                    <p>Viewing</p>
+                    <button id="current" class="pokemon col">
+                    </button>
+                    <div>
+                        <button type="button" id="pre">Previous</button>
+                        <button type="button" id="nex">Next</button>
+                    </div>
+                </div>
+                <div>
+                    <h4><span id="label">Pokemon</span><span>&darr;</span></h4>
+                    <ul id="pokemon">
+                    </ul>
+                    <div>
+                        <button type="button" id="prior" onclick="back();">Previous</button>
+                        <button type="button" id="upcoming" onclick="next();">Next</button>
+                    </div>
+                </div>
+            </div>
+       </main>
+    </body>
+</html>

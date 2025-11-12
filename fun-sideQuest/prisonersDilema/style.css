@@ -1,0 +1,28 @@
+select{
+    width: 200px;
+}
+
+.view{
+    width: 240px;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    flex-direction: row;
+}
+
+#result1, #result2{
+    display: flex;
+    flex-direction: column;
+}
+
+#points{
+    padding: 30px;
+}
+
+.coop{
+    color: #1dcf1d;
+}
+
+.deffect{
+    color: #f60808;
+}

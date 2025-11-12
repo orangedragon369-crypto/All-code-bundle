@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="scripts/playlist.js" defer></script>
+        <link rel="stylesheet" href="style/style.css">
+    </head>
+    <body class="cont">
+        <div class="box">
+            <div>
+                <span><b id="status">Currently Paused:</b></span><span id="playing"></span>
+            </div>
+            <div class="cont">
+                <button type="button" onclick="playlist.back();">Previous</button>
+                <button type="button" onclick="playbtn();" id="play">Play</button>
+                <button type="button" onclick="playlist.forward();">Next</button>
+            </div>
+        </div>
+    </body>
+</html>

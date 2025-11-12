@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script defer src="../scripts/cart.mjs" type="module"></script>
+        <script defer src="../scripts/cart_orderHTML.mjs" type="module"></script>
+        <script defer src="../scripts/items.mjs" type="module"></script>
+        <script defer src="../modular_page_pieces/header.mjs" type="module"></script>
+    </head>
+    <body id="main">
+        <main>
+            <br><br><hr>
+            <div class="cont lighten-frost between">
+                <img src="../images/amazon-logo-squid-ink-smile-orange.png" height="40vh">
+                <div class="cont hug">
+                    <h3>Checkout (</h3>
+                    <h3 class="cart-count cart-body"></3h>
+                    <h3 class="cart-body">&ThinSpace; items</h3>
+                    <h3>)</h3>
+                </div>
+                <div><i class="fa fa-lock"></i></div>
+            </div>
+            <br>
+            <br>
+            <h3 class="lighten-frost"><b>Review your order</b></h3>
+            <div class="cont between lighten-frost2">
+                 <div class="ainer" id="cart-collection">
+                    
+                 </div>
+                <div class="cart-price ainer">
+                    <div id="order-box">
+                        <div class="cart-tittle">Order Summary</div>
+                        <div class="cont between">
+                            <div class="cont"><span>Items(</span><h3 class="cart-count no-bold"></h3><span>):</span></div>
+                            <div class="cost">1</div>
+                        </div>
+                        <div class="cont between">
+                            <div>Shipping & handling:</div>
+                            <div>2</div>
+                        </div>
+                        <div class="cont between">
+                            <div>Total before tax:</div>
+                            <div class="cost">3</div>
+                        </div>
+                        <div class="cont between">
+                            <div>Estimated tax(7.45%):</div>
+                            <div class="cost">4</div>
+                        </div>
+                        <hr>
+                        <div class="cont total between">
+                            <div>Order total:</div>
+                            <div class="cost">5</div>
+                        </div>
+                        <button id="order"><b>Place your order</b></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <h6>I'm not Amazon</h6>
+        </footer>
+    </body>
+</html>

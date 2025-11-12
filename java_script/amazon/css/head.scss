@@ -1,0 +1,51 @@
+header{
+    display: flex;
+    background-color: black;
+    color: white;
+    height: 15vh;
+    align-items: center;
+}
+
+.cart-head {
+    color:#c5823b
+}
+
+.search, .btn {
+    padding: 4px;
+    margin: -3px;
+    border: 0;
+}
+.search{
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    width: 30vw;
+    height: 20px;
+
+    &:hover {
+        background-color: #e3e3e3;
+    }
+}
+
+.btn {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #c5823b;
+    height: 28px;
+    width: 8vw;
+
+    &:hover {
+        background-color: #ff8400;
+    }
+}
+
+.logo-on-black{
+    width: 125px;
+    background-position: left 0px top -120px;
+    background-image: url("../images/nav-sprite-global-2x-reorg-privacy._CB546805360_.png");
+    height: 40px;
+    background-size: 350px;
+}
+
+.set-bottom{
+    margin-top: 30px;
+}

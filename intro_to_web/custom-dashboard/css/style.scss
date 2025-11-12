@@ -1,0 +1,133 @@
+@use "var.scss";
+@use "nav.scss";
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: row;
+    }
+
+    .container {
+        flex-direction: row;
+    }
+
+    .container_alt {
+        flex-direction: column;
+    }
+}
+
+* {
+    color: var.$textColor;
+    font-weight: 1;
+}
+ .norm {
+    font-size: .75em;
+ }
+
+body {
+    background-color: var.$primaryColor;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.container_alt {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+
+    .box {
+        justify-content: space-around;
+    }
+
+    .container{
+        padding: 0px;
+        margin: 0px;
+
+        .box {
+            height: 15.5vh;
+        }
+    }
+}
+
+.container{
+    flex-direction: column;
+
+    .box {
+        justify-content: space-around;
+    }
+
+    .container{
+        padding: 0px;
+        margin: 0px;
+
+        .box {
+            height: 15.5vh;
+        }
+    }
+}
+
+.main {
+    flex-direction: column;
+}
+
+.box, .container, .main {
+    margin: 1vh;
+    display: flex;
+}
+
+.box{
+    @include var.boxbackground (16vw, 37vh);
+    flex-direction: column;
+}
+
+.tittle {
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.num {
+    font-weight: bold;
+    font-size: 2.5em;
+}
+
+.unit {
+    font-weight: 300;
+    font-size: 2em;
+}
+
+.boxbig {
+    @include var.boxbackground (36vw, 37vh);
+    margin: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: inherit;
+        height: inherit;
+    }
+}
+
+hr {
+    border-color: #726b6b54;
+}
+
+.graph {
+    font-size: .8em;
+    line-height: .0001vh;
+}
+
+.report {
+    @include var.boxbackground (48vw, 60vh);
+}
+
+.history {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    align-items: flex-start;
+}

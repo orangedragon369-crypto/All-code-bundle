@@ -1,0 +1,126 @@
+.cont, .cont_alt, .image {
+  display: flex;
+}
+
+.cont, .info_type2, .info_type1 {
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+}
+
+.center_alt {
+  align-items: center;
+}
+
+.separate {
+  justify-content: space-around;
+}
+
+.left {
+  justify-content: flex-start;
+}
+
+.split {
+  justify-content: space-between;
+}
+
+header, footer, .backcolorred {
+  background-color: #cd853f;
+}
+
+.colorred {
+  color: #8f0f0f;
+}
+
+footer {
+  height: 50px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.space, a {
+  text-decoration: none;
+  padding: 15px;
+  color: black;
+}
+.space:hover, a:hover {
+  color: #afafaf;
+}
+
+.image {
+  height: 80vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.welcomeline {
+  margin: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+  height: 15px;
+  font-weight: 900;
+  font-size: larger;
+}
+
+.wrap {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.home {
+  background-image: url("../images/hero-image.jpg");
+  width: 100%;
+}
+
+.recipies {
+  background-image: url("../images/burger-hero.jpg");
+  background-position: center;
+}
+
+.info_type1 {
+  background-color: #ffffff;
+  padding: 30px;
+}
+.info_type1 img {
+  width: 20vw;
+  height: 25vh;
+  border: 5px solid #afafaf;
+}
+
+.round {
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.info_type2 {
+  background-color: #afafaf;
+  padding: 30px;
+}
+.info_type2 img {
+  width: 15vw;
+  height: 25vh;
+}
+.info_type2 a:hover {
+  color: #cd853f;
+}
+.info_type2 div p {
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+#Logo {
+  width: 10vw;
+  height: 10vh;
+}
+
+main {
+  max-width: 70vw;
+  justify-self: center;
+}/*# sourceMappingURL=style.css.map */

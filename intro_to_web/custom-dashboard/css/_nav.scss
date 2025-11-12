@@ -1,0 +1,139 @@
+@use "var.scss";
+
+#dashboard {
+    display: none;
+}
+body {    
+    display: flex;     
+    flex-direction: column;   
+    height: 100vh;
+    background-color: var.$textColor;
+    
+}
+
+header {
+    display: flex;
+    background-color: var.$primaryColor;
+    color: var.$textColor;
+    padding: 0 16px;
+    align-items: center;
+    justify-content: space-between;
+    .menubutton {
+        background: none;
+        color: var.$textColor;
+        border: none;
+        cursor: pointer;
+        &:hover {
+            color: var.$secondaryColor;
+        }
+
+    }
+    
+}
+
+.website-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    left: 200px;
+    h2 {
+        font-size: 24px;
+        text-transform: uppercase;
+    }
+}
+
+form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px ;
+    border-radius: 10px;
+    padding: 4px 12px;
+    background-color: var.$textColor;
+    input {
+        margin: 0;
+        outline: none;
+        appearance: none;
+        border: none;
+        background-color: transparent;
+        font-size: 16px;
+        width:100%;
+    }
+    .searchbutton {
+        border: none;
+        background: none;
+        color: var.$secondaryColor;
+        cursor: pointer;
+        &:hover {
+            color: var.$primaryColor;
+        }
+    }
+    
+}
+.user {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+        color: var.$secondaryColor;
+    }
+    .userlog {
+        text-decoration: none;
+        color: var.$textColor;
+
+        &:hover {
+        color: var.$secondaryColor;
+        }
+    }
+}
+
+ //tranfer the next css codes to a single file//
+ .aside{
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    background-color: var.$primaryColor;
+    width: 200px;
+    height: 100%;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 90;
+}
+
+.aside .top {
+    color:var.$secondaryColor;
+    .website-logo{
+        color: var.$textColor;
+    }
+    .close {
+        color: var.$textColor;
+        cursor: pointer;
+        &:hover {
+        color: var.$secondaryColor;
+        }
+    }
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: var.$primaryColor;
+}
+    
+a   {
+    text-decoration: none;
+    color: var.$textColor;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+    height: 3.5rem;
+    cursor: pointer;
+}
+
+h3:hover {}
+    color: var.$secondaryColor;
+}
