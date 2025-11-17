@@ -1,4 +1,4 @@
-import { cart } from "../scripts/cart.mjs";
+import cart from "../scripts/cart.mjs";
 
 function renderHeader(){
     const header = document.createElement("header");
@@ -25,7 +25,14 @@ function renderHeader(){
 }
 
 renderHeader();
-const cartCount = document.getElementsByClassName("cart-count");
-for (let i = 0; i < cartCount.length; i++){
-    cartCount[i].innerHTML = cart.count();
+
+function updateCount(){
+    const cartCount = document.getElementsByClassName("cart-count");
+    for (let i = 0; i < cartCount.length; i++){
+        cartCount[i].innerHTML = cart.count();
+    }
 }
+
+updateCount();
+
+export default updateCount;
