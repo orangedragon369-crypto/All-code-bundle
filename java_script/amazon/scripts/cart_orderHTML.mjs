@@ -59,10 +59,3 @@ function order(){
     alert(`You have successfully order the contents of your cart, costing $${cart.total} in total.`);
     cart.saveItems();
 }
-
-
-if (window.location.pathname.split("/").pop() === "cart.html") {
-    fillCart();
-    const placeOrder = document.getElementById("order");
-    placeOrder.addEventListener("click", order);
-}

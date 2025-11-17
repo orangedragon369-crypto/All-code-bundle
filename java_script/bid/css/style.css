@@ -1,15 +1,16 @@
-#stuff{
-    border: solid 2px black;
+#stuff {
+  border: solid 3px black;
 }
 
-#winning{
-    font-weight: 400;
-    font-size: 30px;
+#winning {
+  font-weight: 400;
+  font-size: 30px;
 }
 
-.cont{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+.cont {
+  display: flex;
 }
-/*# sourceMappingURL=style.css.map */
+
+#clear {
+  justify-self: flex-end;
+}/*# sourceMappingURL=style.css.map */

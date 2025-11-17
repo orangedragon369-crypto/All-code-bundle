@@ -88,5 +88,4 @@ class Cart{
 
 const cart = new Cart(.0745);
 cart.getInfoStorage()
-
-export default cart;
+export {cart};

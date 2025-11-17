@@ -25,14 +25,7 @@ function renderHeader(){
 }
 
 renderHeader();
-
-function updateCount(){
-    const cartCount = document.getElementsByClassName("cart-count");
-    for (let i = 0; i < cartCount.length; i++){
-        cartCount[i].innerHTML = cart.count();
-    }
+const cartCount = document.getElementsByClassName("cart-count");
+for (let i = 0; i < cartCount.length; i++){
+    cartCount[i].innerHTML = cart.count();
 }
-
-updateCount();
-
-export default updateCount;
