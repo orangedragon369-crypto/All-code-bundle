@@ -1,79 +1,92 @@
 class Cart{
     constructor(tax) {
         this.items = [];
-        this.prices = [];
         this.num = [];
-        this.pics = [];
         this.cost = 0;
-        this.taxes = this.cost * tax;
-        this.total = this.cost + this.taxes;
+        this.tax = tax;
     }
 
     count(){
-        let much = this.items.length;
-        for (items in this.num) much += num[items] > 1 ? 1 : 0;
-        much = much >= 100 ? "99+": much;
-        return much;
+        const total = this.num.reduce((sum, qty) => sum + qty, 0);
+        return total >= 100 ? "99+" : total;
     }
 
-    len(which){
-        return this.which.length -1;
+    len(what){
+        switch (what){
+            case "items":
+                return this.items.length;
+            case "num":
+                return this.num.length;
+            default:
+                return null
+        }
     }
     
-    addItem(item, cost, num, pics){
+    addItem(item, num, cost){
+        if (this.items.includes(item)) return this.moreItem(item, cost);
         this.items.push(item);
-        this.prices.push(cost);
         this.num.push(num);
-        this.pics.push(pics);
         this.cost += cost * num;
     }
 
-    pop(item){
-        item = this.getItem(item);
-        this.items.pop(item[3]);
-        cost -= this.prices.pop(item[3]) * this.num.pop(item[3]);
+    moreItem(which, cost){
+        this.num[this.items.findIndex((item) => item === which)]++;
+        this.cost += cost;
+    }
+
+    lessItem(which, cost){
+        if (!which) return;
+        if (this.getItem(which)[1] > 0){
+            this.num[this.items.findIndex((item) => item === which)]--;
+            this.cost -= cost;
+        }
+    }
+
+    pop(){
+        let item = [this.items.pop(), this.num.pop()];
         return item;
     }
 
-    getItem(item){
-        let toReturn = [];
-        item = typeof(items) === "number" ? item : this.items.findIndex(item);
-        toReturn.push(this.items.at(item));
-        toReturn.push(this.prices.at(item));
-        toReturn.push(this.num.at(item));
-        toReturn.push(this.pics.at(item));
-        toReturn.push(item);
-        return toReturn;
+    getItem(name){
+        let item = this.items.findIndex((it) => it === name)
+        if (item === -1) return [null, null];
+        return [this.items.at(item), this.num.at(item)];
     }
 
     saveItems(){
-        localStorage.setItem("this.items", this.items);
-        localStorage.setItem("this.prices", this.prices);
-        localStorage.setItem("this.num", this.num);
-        localStorage.setItem("this.pics", this.pics);
-        localStorage.setItem("this.cost", this.cost);
+        localStorage.setItem("this.items", JSON.stringify(this.items));
+        localStorage.setItem("this.num", JSON.stringify(this.num));
+        localStorage.setItem("this.cost", JSON.stringify(this.cost));
     }
 
     getInfoStorage(){
         this.items = localStorage.getItem("this.items") !== null? JSON.parse(localStorage.getItem("this.items")): this.items;
-        this.prices = localStorage.getItem("this.prices") !== null? JSON.parse(localStorage.getItem("this.prices")): this.prices;
         this.num = localStorage.getItem("this.num") !== null? JSON.parse(localStorage.getItem("this.num")): this.num;
-        this.pics = localStorage.getItem("this.pics") !== null? JSON.parse(localStorage.getItem("this.pics")): this.pics;
         this.cost = localStorage.getItem("this.cost") !== null? JSON.parse(localStorage.getItem("this.cost")): 0;
     }
 
     clear(){
         this.items = [];
-        this.prices = [];
         this.num = [];
-        this.pics = [];
         this.cost = 0;
     }
 
-    delete(item){this.pop(item)}
+    delete(item, price){
+        const index = this.items.indexOf(item);
+        if (index !== -1) {
+            this.cost -= price*this.num[index];
+            this.items.splice(index, 1);
+            this.num.splice(index, 1);
+        }
+
+        if (this.num[index] === 0) {
+            this.items.splice(index, 1);
+            this.num.splice(index, 1);
+        }
+    }
 }
 
-const products = new Cart(0);
 const cart = new Cart(.0745);
 cart.getInfoStorage()
-export {cart};
+
+export default cart;
