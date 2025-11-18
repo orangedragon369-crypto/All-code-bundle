@@ -1,0 +1,47 @@
+* {
+  color: #000;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  height: 100px;
+  background-color: #bfbfbf;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+}
+
+.logo1 {
+  color: #db0000;
+}
+
+.logo2 {
+  color: #00b121;
+}
+
+.logo-hold {
+  background-color: #565555;
+  padding: 12px;
+  border-radius: 12px;
+}
+.logo-hold div {
+  display: block;
+  font-weight: 800;
+  font-size: larger;
+}
+
+footer {
+  background-color: #bfbfbf;
+  text-align: center;
+  padding: 10px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+}/*# sourceMappingURL=index.css.map */
