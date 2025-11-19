@@ -1,47 +1,88 @@
+:root {
+  --primary: #efefef;
+  --text: #000;
+  --secondary: #bfbfbf;
+  --tertiary: #565555;
+}
+
 * {
-  color: #000;
+  color: var(--text);
 }
 
 header {
-  display: flex;
   justify-content: space-around;
-  height: 100px;
-  background-color: #bfbfbf;
+  height: 14vh;
   align-items: center;
+}
+
+header, footer {
+  background-color: var(--secondary);
 }
 
 body {
   margin: 0;
 }
 
-.logo1 {
-  color: #db0000;
-}
-
-.logo2 {
-  color: #00b121;
-}
-
-.logo-hold {
-  background-color: #565555;
-  padding: 12px;
-  border-radius: 12px;
-}
-.logo-hold div {
-  display: block;
-  font-weight: 800;
-  font-size: larger;
+.login {
+  background-color: var(--primary);
+  padding: 7px;
+  border-radius: 10px;
 }
 
 footer {
-  background-color: #bfbfbf;
+  padding: 2vh;
+}
+
+footer, .joke {
   text-align: center;
-  padding: 10px;
+}
+
+#root {
+  flex-direction: column;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.dash-main, .info-main, .games-main, .stats-main, .login-main {
+  height: 100%;
+}
+
+.dash-main, header, .row, #root, .game-area {
+  display: flex;
+}
+
+.row {
+  height: 41vh;
+  border-top: solid var(--secondary) 1px;
 }
 
 .content {
-  display: flex;
+  width: 76vw;
+}
+
+.joke, .score {
+  width: 26vw;
+}
+
+.joke, .cats-fact-day, .score {
+  border-right: solid var(--secondary) 1px;
+}
+
+.cats-fact-day, .score, .used-recently, .games-soon {
+  padding: 0 15px 0 15px;
+}
+
+.cats-fact-day, .used-recently {
+  width: 38vw;
+}
+
+.games-soon {
+  width: 46vw;
+}
+
+#game-area, #root {
   justify-content: space-between;
-  flex-direction: column;
-  height: 100vh;
 }/*# sourceMappingURL=index.css.map */

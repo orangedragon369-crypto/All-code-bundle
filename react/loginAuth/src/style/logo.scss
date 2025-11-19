@@ -1,0 +1,20 @@
+@use "_variables.scss";
+
+.logo1{
+  color: variables.$highlightColor;
+}
+
+.logo2{
+  color: #00b121;
+}
+
+.logo-hold{
+  background-color: variables.$tertiaryColor;
+  padding: 12px;
+  border-radius: 10px;
+  
+  div{
+    font-weight: 800;
+    font-size: larger;
+  }
+}

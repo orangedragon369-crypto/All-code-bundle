@@ -1,50 +1,90 @@
-@use "_variables.scss";
+@use '_variables.scss';
+
+:root{
+  --primary: #{variables.$primaryColor};
+  --text: #{variables.$textColor};
+  --secondary: #{variables.$secondaryColor};
+  --tertiary: #{variables.$tertiaryColor};
+}
 
 *{
-  color: variables.$textColor;
+  color: var(--text);
 }
 
 header{
-  display: flex;
   justify-content: space-around;
-  height: 100px;
-  background-color: variables.$secondaryColor;
+  height: 14vh;
   align-items: center;
+}
+
+header, footer {
+  background-color: var(--secondary);
 }
 
 body {
   margin: 0;
 }
 
-.logo1{
-  color: #db0000;
-}
-
-.logo2{
-  color: #00b121;
-}
-
-.logo-hold{
-  background-color: #565555;
-  padding: 12px;
-  border-radius: 12px;
-  
-  div{
-    display: block;
-    font-weight: 800;
-    font-size: larger;
-  }
+.login{
+  background-color: var(--primary);
+  padding: 7px;
+  border-radius: 10px;
 }
 
 footer{
-  background-color: variables.$secondaryColor;
-  text-align: center;
-  padding: 10px;
+  padding: 2vh;
 }
 
-.content{
-  display: flex;
-  justify-content: space-between;
+footer, .joke {
+  text-align: center;
+}
+
+#root{
   flex-direction: column;
   height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.dash-main, .info-main, .games-main, .stats-main, .login-main {
+  height: 100%;
+}
+
+.dash-main, header, .row, #root, .game-area{
+  display: flex;
+}
+
+.row {
+  height: 41vh;
+  border-top: solid var(--secondary) 1px;
+}
+
+.content {
+  width: 76vw;
+}
+
+.joke, .score{
+  width: 26vw;
+}
+
+.joke, .cats-fact-day, .score{
+  border-right: solid var(--secondary) 1px;
+}
+
+.cats-fact-day, .score, .used-recently, .games-soon{
+  padding: 0 15px 0 15px;
+}
+
+.cats-fact-day, .used-recently{
+  width: 38vw;
+}
+
+.games-soon {
+  width: 46vw;
+}
+
+#game-area, #root {
+  justify-content: space-between;
 }

@@ -17,12 +17,6 @@ export default function NavBar(){
             <Link to="/games">
                 <h2><FontAwesomeIcon icon={faGamepad} /><span className="noLines">&ensp;Games</span></h2>
             </Link>
-            <Link to="/stats">
-                <h2><FontAwesomeIcon icon={faChartColumn} /><span className="noLines">&ensp;Stats</span></h2>
-            </Link>
-            <Link to="/login">
-                <div>login</div>
-            </Link>
             
         </header>
     );

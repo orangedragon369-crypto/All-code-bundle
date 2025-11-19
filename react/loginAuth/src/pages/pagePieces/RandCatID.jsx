@@ -1,4 +1,4 @@
-import { catsViewed } from "./App";
+import { catsViewed } from "../../App";
 
 export default function RandCatId() {
     const catCount = 1986;

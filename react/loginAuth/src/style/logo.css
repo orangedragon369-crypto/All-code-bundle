@@ -1,0 +1,17 @@
+.logo1 {
+  color: #db0000;
+}
+
+.logo2 {
+  color: #00b121;
+}
+
+.logo-hold {
+  background-color: #565555;
+  padding: 12px;
+  border-radius: 10px;
+}
+.logo-hold div {
+  font-weight: 800;
+  font-size: larger;
+}/*# sourceMappingURL=logo.css.map */
