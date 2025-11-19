@@ -9,23 +9,18 @@ import Login from './pages/Login.jsx';
 import Footer from './pages/pagePieces/Footer.jsx';
 import './style/index.css';
 
-const catsViewed = [];
-
-
 export default function App() {
   return (
-    <div className='content'>
+    <>
       <NavBar/>
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/games" element={<Games />} />
-        <Route path="/info" element={<InfoPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/stats" element={<StatsPage />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/games" element={<Games />} />
+          <Route path="/info" element={<InfoPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/stats" element={<StatsPage />} />
+        </Routes>
       <Footer/>
-    </div>
+    </>
   )
 }
-
-export {catsViewed};
