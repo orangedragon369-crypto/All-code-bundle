@@ -13,11 +13,8 @@
 
 header{
   justify-content: space-around;
-  height: 14vh;
+  height: 100px;
   align-items: center;
-}
-
-header, footer {
   background-color: var(--secondary);
 }
 
@@ -31,14 +28,6 @@ body {
   border-radius: 10px;
 }
 
-footer{
-  padding: 2vh;
-}
-
-footer, .joke {
-  text-align: center;
-}
-
 #root{
   flex-direction: column;
   height: 100vh;
@@ -50,34 +39,37 @@ a {
 
 .dash-main, .info-main, .games-main, .stats-main, .login-main {
   height: 100%;
+  background-color: var(--primary);
 }
 
-.dash-main, header, .row, #root, .game-area{
+.dash-main, header, .row, #root, .game-area, .info-main, .login-main{
   display: flex;
 }
 
-.row {
-  height: 41vh;
-  border-top: solid var(--secondary) 1px;
+.row{
+  height: 50%;
+  border-bottom: solid var(--secondary) 1px;
 }
 
 .content {
   width: 76vw;
+  height: 100%;
 }
 
 .joke, .score{
   width: 26vw;
 }
 
-.joke, .cats-fact-day, .score{
+.joke, .facts, .score{
   border-right: solid var(--secondary) 1px;
 }
 
-.cats-fact-day, .score, .used-recently, .games-soon{
+.facts, .score, .used-recently, .games-soon{
   padding: 0 15px 0 15px;
+  margin-top: 1px;
 }
 
-.cats-fact-day, .used-recently{
+.facts, .used-recently{
   width: 38vw;
 }
 
@@ -87,4 +79,61 @@ a {
 
 #game-area, #root {
   justify-content: space-between;
+}
+
+.info-main {
+  background-color:  var(--secondary);
+  min-height: fit-content;
+}
+
+.data {
+  background-color:  var(--primary);
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+}
+
+.info{
+  width: fit-content;
+  padding: 10px;
+}
+
+.tab{
+  width: 90px;
+}
+
+.joke {
+  text-align: center;
+}
+
+.a-joke {
+  border: solid 1px var(--secondary);
+  margin: 8px;
+  padding: 8px;
+}
+
+.infoBtn{
+  background-color: var(--secondary);
+}
+
+.infoBtn, .btn {
+  border: none;
+}
+
+.btn{
+  background-color: var(--primary);
+}
+
+.closed{
+  display: none;
+}
+
+.spaceNeeded{
+  display: flex;
+  flex-flow: wrap;
+}
+
+.login-main {
+  justify-content: center;
+  align-items: center;
 }

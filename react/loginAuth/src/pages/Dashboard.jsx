@@ -1,5 +1,6 @@
 import "../style/index.css";
-import GiveJoke from "./pagePieces/GetJokes";
+import GiveJoke from "./pagePieces/GetJokes.jsx";
+import GiveFact from "./pagePieces/CatFact.jsx";
 
 export default function Dashboard(){
     return(
@@ -9,13 +10,16 @@ export default function Dashboard(){
                 <hr></hr>
                 <div id="joke-info">
                     <GiveJoke />
+                    <GiveJoke />
+                    <GiveJoke />
+                    <GiveJoke />
                 </div>
             </div>
             <div className="content">
                 <div className="row">
-                    <div className="cats-fact-day">
-                        <h2>Daily Cat facts</h2>
-                        <div>cat fact.</div>
+                    <div className="facts">
+                        <h2>Did you know?</h2>
+                        <GiveFact />
                     </div>
                     <div className="used-recently">
                         <h2>Jump back in</h2>

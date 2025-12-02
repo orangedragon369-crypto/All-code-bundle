@@ -6,7 +6,6 @@ import StatsPage from './pages/statsPage.jsx';
 import Games from './pages/Games.jsx';
 import InfoPage from './pages/InfoPage.jsx';
 import Login from './pages/Login.jsx';
-import Footer from './pages/pagePieces/Footer.jsx';
 import './style/index.css';
 
 export default function App() {
@@ -20,7 +19,6 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/stats" element={<StatsPage />} />
         </Routes>
-      <Footer/>
     </>
   )
 }

@@ -1,4 +1,3 @@
-'use client';
 import { useEffect, useState } from "react";
 import getApi from "../../scriptsOnly/api";
 
@@ -7,17 +6,21 @@ export default function GiveJoke() {
 
     useEffect(() => {
         async function fetchJoke() {
-            const url = ["https://geek-jokes.sameerkumar.website/api?format=json"];
+            const url = "https://geek-jokes.sameerkumar.website/api?format=json";
             const data = await getApi(url);
             setJoke(data.joke || "No joke found");
+            if (joke.includes("fsck") || joke.includes("Fsck")) {
+                fetchJoke();
+            }
         }
 
         fetchJoke();
+
     }, []);
 
     return (
-        <div>
-            <div>{joke}</div>
+        <div className="a-joke">
+            {joke}
         </div>
     );
 }
