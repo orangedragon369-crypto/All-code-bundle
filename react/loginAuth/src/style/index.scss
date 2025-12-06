@@ -7,6 +7,25 @@
   --tertiary: #{variables.$tertiaryColor};
 }
 
+.logo1{
+  color: variables.$highlightColor;
+}
+
+.logo2{
+  color: #119429;
+}
+
+.logo-hold{
+  background-color: var(--tertiary);
+  padding: 12px;
+  border-radius: 10px;
+  
+  div{
+    font-weight: 800;
+    font-size: larger;
+  }
+}
+
 *{
   color: var(--text);
 }
@@ -22,12 +41,6 @@ body {
   margin: 0;
 }
 
-.login{
-  background-color: var(--primary);
-  padding: 7px;
-  border-radius: 10px;
-}
-
 #root{
   flex-direction: column;
   height: 100vh;
@@ -37,12 +50,12 @@ a {
   text-decoration: none;
 }
 
-.dash-main, .info-main, .games-main, .stats-main, .login-main {
+.dash-main, .info-main, .games-main, .stats-main{
   height: 100%;
   background-color: var(--primary);
 }
 
-.dash-main, header, .row, #root, .game-area, .info-main, .login-main{
+.dash-main, header, .row, #root, #game-area, .info-main, .games-main, .spaceNeeded{
   display: flex;
 }
 
@@ -88,7 +101,6 @@ a {
 
 .data {
   background-color:  var(--primary);
-  height: 100%;
   width: 100%;
   padding: 10px;
 }
@@ -124,16 +136,80 @@ a {
   background-color: var(--primary);
 }
 
-.closed{
-  display: none;
-}
-
-.spaceNeeded{
-  display: flex;
+.spaceNeeded, .games-main{
   flex-flow: wrap;
 }
 
-.login-main {
-  justify-content: center;
+.icon{
+  background: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
+
+.icon-holder{
+  text-align: center;
+  padding: 10px;
+  width: 180px;
+}
+
+.play-screen{
+  background-color: var(--secondary);
+  height: 60vh;
+  width: 60vw;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 7px;
+}
+
+.get-Player{
+  display: flex;
   align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#mode-btn{
+  color: var(--text);
+}
+
+select{
+  width: 200px;
+}
+
+.bckgrnd, select{
+  background-color: var(--primary);
+}
+
+.around{
+    justify-content: "space-around";
+}
+
+.view{
+    width: 240px;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    flex-direction: row;
+}
+
+.result{
+    display: flex;
+    flex-direction: column;
+}
+
+#points{
+    padding: 30px;
+}
+
+.coop{
+    color: #1dcf1d;
+}
+
+.deffect{
+    color: #f60808;
+}
+
+.closed{
+  display: none
 }

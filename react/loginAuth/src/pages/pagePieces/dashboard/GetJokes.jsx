@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import getApi from "../../scriptsOnly/api";
+import getApi from "../../../scriptsOnly/api";
 
 export default function GiveJoke() {
     const [joke, setJoke] = useState("");

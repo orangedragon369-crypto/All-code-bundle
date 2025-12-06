@@ -1,4 +1,3 @@
-import { setInfo } from "../InfoPage";
 import SectionTab from "./SectionTab";
 
 function chunk(list, size) {
@@ -8,7 +7,7 @@ function chunk(list, size) {
     }
     return out;
 }
-export default function splitOne(list, offset, parentId, split) {
+export default function splitOne(list, offset, parentId, split, finalOnClick) {
         const groups = chunk(list, split);
 
         return (
@@ -28,7 +27,7 @@ export default function splitOne(list, offset, parentId, split) {
                                     {group.map((name) => {
                                         const title = name.split("/");
                                         return(<div key={parentId+"/"+name}>
-                                            <button className="infoBtn" onClick={() => setInfo(parentId + "/" + name)}>{title[0]}</button>
+                                            <button className="infoBtn" onClick={() => finalOnClick(`${parentId}/${name}`)}>{title[0]}</button>
                                             <span>&ensp;</span>
                                         </div>);
                                     })}

@@ -1,6 +1,10 @@
-import { catsViewed } from "../../App";
+export default function RandCatId({width, height = width, id}) {
+    if (!id) {
+        return (
+            <img src={`https://cataas.com/cat?width=${width}&height=${height}`} id="catImage" alt="Random Cat" width={`${width}px`} height={`${height}px`}/>
+        );
+    }
 
-export default function RandCatId() {
     const catCount = 1986;
 
     async function getCat(){
@@ -17,6 +21,6 @@ export default function RandCatId() {
 
     getCat()
     return (
-        <img src={null} id="catImage" alt="Random Cat" width="1000px"/>
-    )
+        <img src={null} id="catImage" alt="Random Cat" width={`${width}px`} height={`${height}px`}/>
+    );
 };

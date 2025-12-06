@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from "react";
-import getApi from "../../scriptsOnly/api";
+import getApi from "../../../scriptsOnly/api";
 
 export default function GiveFact() {
     const [fact, setFact] = useState("");

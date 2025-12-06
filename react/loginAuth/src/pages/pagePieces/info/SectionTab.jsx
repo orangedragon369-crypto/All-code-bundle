@@ -1,5 +1,5 @@
-import "../../style/index.css";
-import infoButton from "../../scriptsOnly/infoButton.js";
+import "../../../style/index.css";
+import infoButton from "../../../scriptsOnly/infoButton.js";
 
 export default function SectionTab({name, id, parrentId, ulContents}){
     return (

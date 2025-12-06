@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import getApi from "../../scriptsOnly/api.mjs";
+import getApi from "../../../scriptsOnly/api.mjs";
 import SplitOne from "./listSplitter";
-import { setInfo } from "../InfoPage";
 
-export default function SingleInfoData({ api, startsId, split = null, sort = null}) {
+export default function SingleInfoData({ api, startsId,  split = null, sort = null, finalOnClick}) {
     const [names, setNames] = useState([]);
 
     useEffect(() => {
@@ -27,7 +26,7 @@ export default function SingleInfoData({ api, startsId, split = null, sort = nul
     }, []);
 
     if (split) {
-        return SplitOne (names, 0, startsId, split);
+        return SplitOne (names, 0, startsId, split, finalOnClick);
     }
 
     return (
@@ -35,7 +34,7 @@ export default function SingleInfoData({ api, startsId, split = null, sort = nul
             {names.map((name) => {
                 const title = name.split("/");
                 return (<div key={startsId + name}>
-                    <button className="infoBtn" onClick={() => setInfo(`${startsId}/${name}`)}>{title[0]}</button>
+                    <button className="infoBtn" onClick={() => finalOnClick(`${startsId}/${name}`)}>{title[0]}</button>
                     <span>&ensp;</span>
                 </div>);
             })}

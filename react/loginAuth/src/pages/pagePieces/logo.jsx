@@ -1,4 +1,4 @@
-import '../../style/logo.css'
+import '../../style/index.css'
 
 export default function logo(){
     return (

@@ -1,6 +1,8 @@
 import "../style/index.css";
-import GiveJoke from "./pagePieces/GetJokes.jsx";
-import GiveFact from "./pagePieces/CatFact.jsx";
+import GiveJoke from "./pagePieces/dashboard/GetJokes.jsx";
+import GiveFact from "./pagePieces/dashboard/CatFact.jsx";
+import GameIcon from "./Games/GameIcons.jsx";
+import RandomCat from "./pagePieces/dashboard/RandCatID.jsx";
 
 export default function Dashboard(){
     return(
@@ -22,25 +24,27 @@ export default function Dashboard(){
                         <GiveFact />
                     </div>
                     <div className="used-recently">
-                        <h2>Jump back in</h2>
-                        <div>what ever you did earlier.</div>
+                        <RandomCat width={300}/>
                     </div>
                 </div>
                 <div className="row">
                     <div className="score">
                         <h2>
-                            <span>High Scores&ensp;</span>
-                            <select id="game">
-                                <option>choose an option</option>
-                            </select>
+                            <span>Info Sources&ensp;</span>
                         </h2>
-                        <ol className="scores">
-                            <li>hi</li>
-                        </ol>
+                        <ul className="scores">
+                            <li>Monster Hunter World</li>
+                            <p>Coming Soon</p>
+                            <li>D&D</li>
+                            <li>Monster Hunter Wilds</li>
+                        </ul>
                     </div>
                     <div className="games-soon">
                         <h2>Common Games</h2>
-                        <div id="game-area"></div>
+                        <div id="game-area">{/* 
+                            <GameIcon name={"Uno (Comming Soon"} img={"src/Images/download.png"} display={() => "span"} click={() => null}/> */}
+                            <GameIcon name={"Prisoners Delema"} img={"src/Images/download.jpeg"} display={() => "span"}/>
+                        </div>
                     </div>
                 </div>
             </div>
