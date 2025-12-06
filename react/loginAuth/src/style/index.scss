@@ -7,38 +7,36 @@
   --tertiary: #{variables.$tertiaryColor};
 }
 
-.logo1{
-  color: variables.$highlightColor;
-}
-
-.logo2{
-  color: #119429;
-}
-
-.logo-hold{
-  background-color: var(--tertiary);
-  padding: 12px;
-  border-radius: 10px;
-  
-  div{
-    font-weight: 800;
-    font-size: larger;
-  }
-}
-
 *{
   color: var(--text);
 }
 
 header{
   justify-content: space-around;
-  height: 100px;
+  height: 14vh;
   align-items: center;
+}
+
+header, footer {
   background-color: var(--secondary);
 }
 
 body {
   margin: 0;
+}
+
+.login{
+  background-color: var(--primary);
+  padding: 7px;
+  border-radius: 10px;
+}
+
+footer{
+  padding: 2vh;
+}
+
+footer, .joke {
+  text-align: center;
 }
 
 #root{
@@ -50,39 +48,36 @@ a {
   text-decoration: none;
 }
 
-.dash-main, .info-main, .games-main, .stats-main{
+.dash-main, .info-main, .games-main, .stats-main, .login-main {
   height: 100%;
-  background-color: var(--primary);
 }
 
-.dash-main, header, .row, #root, #game-area, .info-main, .games-main, .spaceNeeded{
+.dash-main, header, .row, #root, .game-area{
   display: flex;
 }
 
-.row{
-  height: 50%;
-  border-bottom: solid var(--secondary) 1px;
+.row {
+  height: 41vh;
+  border-top: solid var(--secondary) 1px;
 }
 
 .content {
   width: 76vw;
-  height: 100%;
 }
 
 .joke, .score{
   width: 26vw;
 }
 
-.joke, .facts, .score{
+.joke, .cats-fact-day, .score{
   border-right: solid var(--secondary) 1px;
 }
 
-.facts, .score, .used-recently, .games-soon{
+.cats-fact-day, .score, .used-recently, .games-soon{
   padding: 0 15px 0 15px;
-  margin-top: 1px;
 }
 
-.facts, .used-recently{
+.cats-fact-day, .used-recently{
   width: 38vw;
 }
 
@@ -92,124 +87,4 @@ a {
 
 #game-area, #root {
   justify-content: space-between;
-}
-
-.info-main {
-  background-color:  var(--secondary);
-  min-height: fit-content;
-}
-
-.data {
-  background-color:  var(--primary);
-  width: 100%;
-  padding: 10px;
-}
-
-.info{
-  width: fit-content;
-  padding: 10px;
-}
-
-.tab{
-  width: 90px;
-}
-
-.joke {
-  text-align: center;
-}
-
-.a-joke {
-  border: solid 1px var(--secondary);
-  margin: 8px;
-  padding: 8px;
-}
-
-.infoBtn{
-  background-color: var(--secondary);
-}
-
-.infoBtn, .btn {
-  border: none;
-}
-
-.btn{
-  background-color: var(--primary);
-}
-
-.spaceNeeded, .games-main{
-  flex-flow: wrap;
-}
-
-.icon{
-  background: center;
-  width: 150px;
-  height: 150px;
-  border-radius: 10px;
-}
-
-.icon-holder{
-  text-align: center;
-  padding: 10px;
-  width: 180px;
-}
-
-.play-screen{
-  background-color: var(--secondary);
-  height: 60vh;
-  width: 60vw;
-  border-radius: 15px;
-  padding: 15px;
-  margin: 7px;
-}
-
-.get-Player{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-
-#mode-btn{
-  color: var(--text);
-}
-
-select{
-  width: 200px;
-}
-
-.bckgrnd, select{
-  background-color: var(--primary);
-}
-
-.around{
-    justify-content: "space-around";
-}
-
-.view{
-    width: 240px;
-    display: flex;
-    justify-content: space-between;
-    padding: 30px;
-    flex-direction: row;
-}
-
-.result{
-    display: flex;
-    flex-direction: column;
-}
-
-#points{
-    padding: 30px;
-}
-
-.coop{
-    color: #1dcf1d;
-}
-
-.deffect{
-    color: #f60808;
-}
-
-.closed{
-  display: none
 }
