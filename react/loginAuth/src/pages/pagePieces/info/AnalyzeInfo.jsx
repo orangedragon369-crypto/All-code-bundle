@@ -20,11 +20,11 @@ export default function AnalyzeInfo({ dataId, type }) {
                     </div>);
                 })}</span></div>
                 <h4>Recovery</h4>
-                <div><span>Actions:&ensp;</span><span>{dataId.recovery.actions.map((solve, index) => {
-                    return (<div key={"propSkill"+ index}>
+                <div><span>Actions:&ensp;</span>{dataId.recovery.actions.map((solve, index) => {
+                    return (<span key={"propSkill"+ index}>
                         {solve}
-                    </div>);
-                })}</span></div><br></br>
+                    </span>);
+                })}</div><br></br>
                 <div><span>Items:&ensp;</span><span>{dataId.recovery.items.map((solve, index) => {
                     return (<div key={"propItem"+ index}>
                         {solve.name}: {solve.description}
