@@ -4,7 +4,7 @@ Sections include:
     - info page giving info on games and thier items  
     - games page with some games on it  
 
-    
+run requirements are the file under loginAuth folder, if it doesn't run make sure it has react and font awesome   
 commit changes on branch to add when possible  
 Start with npm run dev on VS code proven to work, unsure on other start methods  
 If you use it just reference apis and this git acount  
