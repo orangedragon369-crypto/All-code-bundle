@@ -3,23 +3,74 @@
     <head>
         <link rel="stylesheet" href="css/style.css">
         <script src="scripts/renderHeader.mjs" type="module" defer></script>
+        <script src="scripts/game.mjs" type="module" defer></script>
         <script src="https://kit.fontawesome.com/ed99046da8.js" crossorigin="anonymous"></script>
-        <title>Playing Trivia</title>
+        <title>Playing Monster Guess Game</title>
     </head>
     <body>
         <header id="header">
         </header>
         <main class="cont">
+            <div class="names">
+                <h2>Monster List</h2>
+                <button onclick="
+                    alert(`The goal of the game is to get the monster's name correct. Click 'More info' to get additional hints about the monster. Be carefull thought, the more hints and the more specific the hint the less points you will get. A list of monsters can be found on the side. Good luck!`);">rules</button>
+                <ul>
+                    <li>Zoh Shia</li>
+                    <li>Guardian Doshaguma</li>
+                    <li>Rey Dau</li>
+                    <li>Lala Barina</li>
+                    <li>Congalala</li>
+                    <li>Nerscylla</li>
+                    <li>Gore Magala</li>
+                    <li>Gravios</li>
+                    <li>Guardian Arkveld</li>
+                    <li>Quematrice</li>
+                    <li>Doshaguma</li>
+                    <li>Balahara</li>
+                    <li>Rathian</li>
+                    <li>Chatacabra</li>
+                    <li>Mizutsune</li>
+                    <li>Guardian Fulgur Anjanath</li>
+                    <li>Hirabami</li>
+                    <li>Yian Kut-Ku</li>
+                    <li>Rompopolo</li>
+                    <li>Arkveld</li>
+                    <li>Ajarakan</li>
+                    <li>Gypceros</li>
+                    <li>Xu Wu</li>
+                    <li>Guardian Rathalos</li>
+                    <li>Uth Duna</li>
+                    <li>Jin Dahaad</li>
+                    <li>Nu Udra</li>
+                    <li>Guardian Ebony Odogaron</li>
+                    <li>Rathalos</li>
+                    <li>Blangonga</li>
+                    <li>Lagiacrus</li>
+                    <li>Seregios</li>
+                    <li>Omega Planetes</li>
+                </ul>
+            </div>
             <div class="cont col">
-                <div id="rSlashW" class="cont see-not">
-                    <h2>I'm invisible</h2>
+                <h1>Monster Guess</h1>
+                <div id="info"></div>
+                <div>
+                    <select id="hintType">
+                        <option value="ailment">Ailment</option>
+                        <option value="description">Description</option>
+                        <option value="element">Element</option>
+                        <option value="features">Features</option>
+                        <option value="location">Locations</option>
+                        <option value="parts">Parts</option>
+                        <option value="resistanes">Resistanes</option>
+                        <option value="Rewards">Rewards</option>
+                        <option value="variants">Variants</option>
+                        <option value="weakness">Weaknesses</option>
+                    </select>
+                    <button type="button" id="more">More info</button>
                 </div>
-                <div id="question">
-                    what is true
-                </div>
-                <div id="options">
-                    
-                </div>
+                <imput type="text" id="answer" placeholder="Enter your guess here">
+                <button type="button" id="submit">Submit</button>
             </div>
         </main>
     </body>
