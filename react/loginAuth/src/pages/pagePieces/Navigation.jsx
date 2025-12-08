@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Logo from './logo.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faInfoCircle, faGamepad, faChartColumn } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faInfoCircle, faGamepad } from '@fortawesome/free-solid-svg-icons';
 import '../../style/index.css';
 import Switch from '@mui/material/Switch';
 import Stack from '@mui/material/Stack';
