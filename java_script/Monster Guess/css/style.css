@@ -27,6 +27,7 @@ body {
 
 main {
     height: 100%;
+    padding: 10px;
 }
 
 .header{
@@ -45,20 +46,3 @@ a, .link{
     font-weight: 900;
     font-size: large;
 }
-
-#rSlashW{
-    position: absolute;
-    top: 20vh;
-    right: 20vw;
-    height: 60vh;
-    width: 60vw;
-    border-radius: 20px;
-    align-items: center;
-    font-weight: 800;
-}
-
-.see-not {opacity: 0;}
-
-.red, .green{opacity: 1;}
-.red{background-color: #f00;}
-.green{background-color: #00da0f;}
