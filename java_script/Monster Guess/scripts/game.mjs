@@ -10,10 +10,13 @@ async function getMonsterInfo() {
     let rewardsGiven = [];
     const response = await fetch(`https://wilds.mhdb.io/en/monsters/${monster}`);
     const data = await response.json();
+    console.log(data);
     info.innerHTML = `
                     <div class="hint">
                         This monster is a ${data.species} type monster. It has a base health of ${data.baseHealth} and size range of ${data.size.mini}m-${data.size.gold}m, averaging at ${data.size.base}m.
                     </div>`;
+
+    document.getElementById('score').innerText = `Current Points: ${points}`;
 
     moreInfoButton.addEventListener('click', () => {
         const hintType = document.getElementById('hintType');
@@ -38,8 +41,9 @@ async function getMonsterInfo() {
                 break;
             case "parts":
                 points -= 15;
-                partsGiven.push(Math.floor(Math.random()*33))
-                info.innerHTML += `<div class="hint">This monster has the following part: ${data.parts[partsGiven.at(-1)].name}`;
+                partsGiven.push(Math.floor(Math.random()*data.parts.length-1));
+                info.innerHTML += `<div class="hint">This monster has the following part: ${data.parts[partsGiven.at(-1)].name}</div>`;
+                console.log(data.parts[partsGiven.at(-1)].name);
                 break;
             case "resistances":
                 points -= 10;
@@ -67,16 +71,23 @@ async function getMonsterInfo() {
             default:
                 console.log("Error in more info switch statements info.value");
         }
+        if (points < 0) {
+            points = 0;
+            gameEnded();
+        }
+        document.getElementById('score').innerText = `Current Points: ${points}`;
     });
 
-    submitButton.addEventListener('click', () => {
+    function gameEnded(){
         const answer = answerInput.value.toLowerCase();
         if (answer === data.name.toLowerCase()) {
             alert(`Correct! You guessed the monster ${data.name} and earned ${points} points!`);
         } else {
-            alert(`Incorrect. The correct answer was ${data.name}.</div>`);
+            alert(`Incorrect. The correct answer was ${data.name}.`);
         }
-    });
+    }
+
+    submitButton.addEventListener('click', gameEnded);
 }
 
 getMonsterInfo();
