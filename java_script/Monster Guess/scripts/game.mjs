@@ -20,6 +20,12 @@ async function getMonsterInfo() {
 
     moreInfoButton.addEventListener('click', () => {
         const hintType = document.getElementById('hintType');
+
+        function giveRand(list, max){
+            let rand = Math.floor(Math.random()*max)
+            return rand = list.indexOf(rand) === -1? rand : giveRand(list, max)
+        }
+
         switch (hintType.value){
             case "ailment":
                 points -= 15;
@@ -41,7 +47,7 @@ async function getMonsterInfo() {
                 break;
             case "parts":
                 points -= 15;
-                partsGiven.push(Math.floor(Math.random()*data.parts.length-1));
+                partsGiven.push(giveRand(partsGiven, data.parts.length-1));
                 info.innerHTML += `<div class="hint">This monster has the following part: ${data.parts[partsGiven.at(-1)].name}</div>`;
                 console.log(data.parts[partsGiven.at(-1)].name);
                 break;
@@ -53,7 +59,7 @@ async function getMonsterInfo() {
                 break;
             case "Rewards":
                 points -= 25;
-                rewardsGiven.push(Math.floor(Math.random()*33));
+                rewardsGiven.push(giveRand(rewardsGiven, data.rewards));
                 info.innerHTML += `<div class="hint">This monster can reward you with: ${data.rewards[rewardsGiven.at(-1)].item.name}</div>`;
                 break;
             case "variants":
