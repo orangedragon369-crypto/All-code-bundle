@@ -3,6 +3,7 @@
     <head value="yes">
         <link rel="stylesheet" href="css/style.css">
         <script src="scripts/renderHeader.mjs" type="module" defer></script>
+        <script src="scripts/stats.mjs" type="module" defer></script>
         <script src="https://kit.fontawesome.com/ed99046da8.js" crossorigin="anonymous"></script>
         <title>Stats page</title>
     </head>
@@ -10,7 +11,14 @@
         <header id="header"></header>
         <main>
             <h1>Stats</h1>
+            <div>
+                <div><span>Average Score:&ensp;</span><span id="average"></span></div>
+                <div><span>Total Score:&ensp;</span><span id="total-score"></span></div>
+                <div><span>Best Score:&ensp;</span><span id="best"></span></div>
+                <ul id="mon-count">
 
+                </ul>
+            </div>
         </main>
     </body>
 </html>
