@@ -2,9 +2,9 @@ const info = document.getElementById('info');
 const moreInfoButton = document.getElementById('more');
 const submitButton = document.getElementById('submit');
 const answerInput = document.getElementById('answer');
-let monster = Math.floor(Math.random()*33);
 
 async function getMonsterInfo() {
+    let monster = Math.floor(Math.random()*33);
     let points = 100;
     let partsGiven = [];
     let rewardsGiven = [];
@@ -95,5 +95,7 @@ async function getMonsterInfo() {
 
     submitButton.addEventListener('click', gameEnded);
 }
+
+document.getElementById("restart").addEventListener("click", getMonsterInfo);
 
 getMonsterInfo();

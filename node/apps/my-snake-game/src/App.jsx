@@ -152,7 +152,7 @@ export default function App() {
 
         <div className="bg-gray-900 rounded-lg p-4 shadow-xl">
           <div
-            className="aspect-square bg-black rounded-md overflow-hidden mx-auto"
+            className="bg-white w-full aspect-square bg-black rounded-md overflow-hidden mx-auto"
             style={{
               maxWidth: 640,
             }}
