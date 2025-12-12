@@ -11,7 +11,7 @@ const passphrase = 'simba';
     passphrase
   });
 
-  const encryptedData = fs.readFileSync(process.argv[3]);
+  const encryptedData = fs.readFileSync('encrypted-secret.txt');
 
   const decrypted = await openpgp.decrypt({
     message: await openpgp.readMessage({ armoredMessage:encryptedData.toString() }),
