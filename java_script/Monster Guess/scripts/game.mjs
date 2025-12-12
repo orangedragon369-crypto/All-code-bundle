@@ -20,7 +20,7 @@ async function getMonsterInfo() {
 
         document.getElementById('score').innerText = `Current Points: ${points}`;
 
-        moreInfoButton.addEventListener('click', () => {
+        moreInfoButton.addEventListener('click', function hint(){
             const hintType = document.getElementById('hintType');
 
             function giveRand(list, max){
@@ -96,8 +96,9 @@ async function getMonsterInfo() {
             }
             setStats("best", points);
             setStats("total", points);
-            setStats("average", points);
+            setStats("scores", points);
             setStats("mon", data.name);
+            moreInfoButton.removeEventListener('click')
         }
 
         submitButton.addEventListener('click', gameEnded);

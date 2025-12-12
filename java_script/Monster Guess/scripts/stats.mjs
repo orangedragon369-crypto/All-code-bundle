@@ -17,7 +17,7 @@ function renderStats(){
             done.push(thing)
         }
     });
-    average.innerText = getLocal("average").length > 0?`${getLocal("total")/getLocal("average").length}`:"0";
+    average.innerText = getLocal("scores").length > 0?`${getLocal("total")/getLocal("scores").length}`:"0";
 }
 
 export default function setStats(stat, increase){
