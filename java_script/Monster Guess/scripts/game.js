@@ -5,9 +5,13 @@ const moreInfoButton = document.getElementById('more');
 const submitButton = document.getElementById('submit');
 const answerInput = document.getElementById('answer');
 
+
+
 export async function getMonsterInfo() {
+    const startTime = Date.now();
+    console.log(startTime)
     try{
-        let monster = /*Math.floor(Math.random()*33)*/1;
+        let monster = Math.floor(Math.random()*33);
         let points = 120;
         let partsGiven = [];
         let rewardsGiven = [];
@@ -20,7 +24,7 @@ export async function getMonsterInfo() {
 
         document.getElementById('score').innerText = `Current Points: ${points}`;
 
-        moreInfoButton.addEventListener('click', function hint(){
+        function hint(){
             const hintType = document.getElementById('hintType');
 
             function giveRand(list, max){
@@ -84,28 +88,44 @@ export async function getMonsterInfo() {
                 gameEnded();
             }
             document.getElementById('score').innerText = `Current Points: ${points}`;
-        });
+        }
+        moreInfoButton.addEventListener('click', hint);
+
+        function restarts(){
+            restart.removeEventListener("click",restarts)
+            submitButton.removeEventListener('click', gameEnded);
+            moreInfoButton.removeEventListener('click', hint);
+            getMonsterInfo();
+        }
+
+        const restart = document.getElementById("restart");
+        
+        restart.addEventListener("click", restarts);
 
         function gameEnded(){
+            const time = (Date.now() - startTime)/1000;
+
             const answer = answerInput.value.toLowerCase();
             if (answer === data.name.toLowerCase()) {
-                alert(`Correct! You guessed the monster ${data.name} and earned ${points} points!`);
+                alert(`Correct! You correctly guessed ${data.name} in ${time} seconds and earned ${points} points!`);
             } else {
-                alert(`Incorrect. The correct answer was ${data.name}.`);
+                alert(`Incorrect. The correct answer was ${data.name}. Your time was ${time} second(s).`);
                 points = 0
             }
-            setStats("best", points);
-            setStats("total", points);
+
+            setStats("bestTime", (time), "best")
+            setStats("allTimes", time, "total")
+            setStats("best", points, "best");
+            setStats("total", points, "total");
             setStats("scores", points);
             setStats("mon", data.name);
-            moreInfoButton.removeEventListener('click')
         }
 
         submitButton.addEventListener('click', gameEnded);
     } catch (error){
         getMonsterInfo()
     }
+
 }
 
-document.getElementById("restart").addEventListener("click", getMonsterInfo);
 getMonsterInfo();

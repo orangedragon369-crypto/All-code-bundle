@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { loadMonsterInfo } from "./game.js";
+import { loadMonsterInfo } from "./game.mjs";
 
 beforeEach(() => {
   document.body.innerHTML = `<div id="info"></div>`;
