@@ -1,0 +1,30 @@
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+0 sent: /kick 1
+undefined has been kicked from the chat by 0.
+0 sent: /kick 1
+0 sent: /end
+0 has left the chat.
+Client 0 connected
+Client 1 connected
+1 sent: /kick 0
+[object Object] has been kicked from the chat by 1.
+Client 0 connected
+Client 1 connected
+1 sent: /kick 0
+0 has been kicked from the chat by 1.
+Client 0 connected
+0 sent: /help
+Client 0 connected
+Client 1 connected
+1 sent: /end
+1 has left the chat.
+0 sent: /end
+0 has left the chat.
+Client 2 connected
+Client 3 connected
+Client 4 connected
+Client 5 connected

@@ -30,6 +30,23 @@ app.post('/user', (req, res) => {
     res.send(`POST request recived. Now creating ${name} with email ${email} and password ${password} on ${new Date()} `)
 });
 
+app.get('/{apple}pie/:count', (req, res)=>{
+    const userId = req.params.count;
+    res.send(`Pie requested: ${userId}`)
+});
+
+app.get(`/.*fly$/`, (req, res)=>{
+    res.send(`/.*fly$`);
+});
+
+app.get(`/classTime/:from-:to`, (req,res)=>{
+    let from = req.params.from;
+    let to = req.params.to;
+    let msg = `Class begins at ${from}. Class ends at ${to}.`;
+    console.log(req.params);
+    res.send(`${msg}`);
+})
+
 app.listen(port, ()=>{
     console.log(`server is runnning on http://localhost:${port}`);
 });

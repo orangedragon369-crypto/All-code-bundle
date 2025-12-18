@@ -49,7 +49,7 @@ const server = net.createServer((sender) => {
                     sender.end();
                     break;
 
-                case "/msg": {
+                case "/w": {
                     const target = clients.get(parts[1]);
                     if (target) {
                         target.write(`(Private) ${id}: ${parts.slice(2).join(" ")}\n`);
@@ -60,11 +60,31 @@ const server = net.createServer((sender) => {
                     break;
                 }
 
-                case "/name":
-                for (const [id] of clients) {
-                    sender.write(`Client ID: ${id}\n`);
-                }
-                break;
+                case "/clientlist":
+                    for (const [id] of clients) {
+                        sender.write(`Client ID: ${id}\n`);
+                    }
+                    break;
+
+                case "/kick":
+                    const target = clients.get(parts[1]);
+                    if (target) {
+                        sender.write(`You have kicked ${parts[1]}`)
+                        target.write("You have been kicked.\n");
+                        sendMost(`${parts[1]} has been kicked from the chat by ${id}`, id);
+                        logToChat(`${parts[1]} has been kicked from the chat by ${id}.`, id);
+                        target.end();
+                    } else {
+                        sender.write("User not found\n");
+                    }
+                    break;
+
+                case "/username":
+                    break;
+
+                case "/help":
+                    sender.write("command options are: /kick {name} (kicks selected client from server), /end (leaves server), /w {name} {message} (talks to speciffied client), /clientlist (lists users), /username {name} (changes username)")
+                    break;
 
                 default:
                     sender.write("Unknown command\n");

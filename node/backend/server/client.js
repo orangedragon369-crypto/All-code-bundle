@@ -15,7 +15,7 @@ client.on("data", (data)=> {
     console.log(data);
 })
 
-console.log('/end to leave')
+console.log('/help for options')
 rl.on('line', (answer) => {
 
         while (answer !== "/end"){

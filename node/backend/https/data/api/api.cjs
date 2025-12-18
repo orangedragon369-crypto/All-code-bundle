@@ -1,4 +1,5 @@
 const http = require("http");
+const argv = require('node:process');
 
 const data = require("../inventory");
 
@@ -30,6 +31,6 @@ http.createServer((req, res) => {
     res.writeHead(404, {"Content-Type": "text/plain"});
     res.end("404 File Not Found");
   }
-}).listen(4000);
+}).listen(argv[2]);
 
-console.log("Server listening on port 4000");
+console.log(`Server listening on port ${argv[2]}`);
