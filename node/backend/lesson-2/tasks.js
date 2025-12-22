@@ -10,9 +10,9 @@ if (todoList.length < 1) console.log('Enter a to-do item, or type "done" to fini
 
 rl.on('line', (answer) => {
 
-        while (answer !== "done"){
+        if (answer !== "done"){
             todoList.push(answer);
-            rl.setPrompt(`Added: "${answer}" to your to-do list.`);
+            rl.setPrompt(`Added: "${answer}" to your to-do list.\n`);
             rl.prompt();
             return;
         }

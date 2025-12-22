@@ -1,58 +1,45 @@
 import net from "net";
-import fs from "fs";
+import { findClientByUsername, logToChat, sendMost, checkID } from "./external_functions.mjs";
 
 const clients = new Map();
-
-function sendMost(send, senderId){
-    for (const [otherId, client] of clients) {
-        if (otherId !== senderId) {
-            client.write(send + "\n");
-        }
-    }
-}
-
-function logToChat(text) {
-    fs.appendFile(
-        "chat.log",
-        text + "\n",
-        (err) => {
-            if (err) {
-                console.error("Failed to write to log:", err);
-            }
-        }
-    );
-}
 
 let nextId = 0;
 
 const server = net.createServer((sender) => {
     
-    const id = nextId.toString();
-    nextId++;
-    clients.set(id, sender);
+    sender.id = `${nextId++}`;
+    sender.username = sender.id;
+    clients.set(sender.id, sender);
 
-    sender.write(`Connected! Your ID is ${id}\n`);
-    sendMost(`New user ${id} has arived`, id)
-    logToChat(`Client ${id} connected`);
+    sender.write(`Connected! Your username is ${sender.username}\n`);
+    sendMost(`New user ${sender.username} has arived`, sender, clients)
+    logToChat(`Client ${sender.username} connected`);
 
     sender.on("data", (data) => {
         const message = data.toString().trim();
-        logToChat(`${id} sent: ${message}`);
+        logToChat(`${sender.username} sent: ${message}`);
         if (message.startsWith("/")) {
             const parts = message.split(" ");
 
             switch (parts[0]) {
                 case "/end":
                     sender.write("Goodbye!\n");
-                    sendMost(`${id} has left the chat.`, id);
-                    logToChat(`${id} has left the chat.`, id);
-                    sender.end();
+
+                    clients.delete(sender.id);
+
+                    sendMost(`${sender.username} has left the chat.`, sender, clients);
+                    logToChat(`${sender.username} has left the chat.`);
+
+                    sender.end();      // graceful close
+                    sender.destroy();  // force close
+
                     break;
 
+
                 case "/w": {
-                    const target = clients.get(parts[1]);
+                    const target = findClientByUsername(parts[1], clients);
                     if (target) {
-                        target.write(`(Private) ${id}: ${parts.slice(2).join(" ")}\n`);
+                        target.write(`(Private) ${sender.username}: ${parts.slice(2).join(" ")}\n`);
                         sender.write("message sent")
                     } else {
                         sender.write("User not found\n");
@@ -61,45 +48,71 @@ const server = net.createServer((sender) => {
                 }
 
                 case "/clientlist":
-                    for (const [id] of clients) {
-                        sender.write(`Client ID: ${id}\n`);
+                    for (const [, client] of clients) {
+                        sender.write(`Client name: ${client.username}\n`);
                     }
                     break;
 
                 case "/kick":
-                    const target = clients.get(parts[1]);
+                    if (parts[2] !== "adminPassword"){
+                        sender.write("Password Invalid\n")
+                        break;
+                    }
+                    const target = findClientByUsername(parts[1], clients);
                     if (target) {
                         sender.write(`You have kicked ${parts[1]}`)
                         target.write("You have been kicked.\n");
-                        sendMost(`${parts[1]} has been kicked from the chat by ${id}`, id);
-                        logToChat(`${parts[1]} has been kicked from the chat by ${id}.`, id);
+                        sendMost(`${parts[1]} has been kicked from the chat by ${sender.username}`, sender, clients);
+                        logToChat(`${parts[1]} has been kicked from the chat by ${sender.username}.`, sender);
+                        clients.delete(target.id);
                         target.end();
+                        target.destroy();
                     } else {
                         sender.write("User not found\n");
                     }
                     break;
 
                 case "/username":
+                    const newName = parts[1];
+                    let taken = [...clients.values()].some(
+                            c => c.username === newName
+                        );
+                    if (sender.username === newName){
+                        sender.write(`You cannot change your username to ${newName} because it is already your username.\n`);
+                        break;
+                    }
+                    if (!taken){
+                        const oldName = sender.username;
+                        sender.username = newName;
+
+                        sender.write(`Your name is now ${newName}\n`);
+                        sendMost(`${oldName} is now known as ${newName}`, sender, clients);
+                        break;
+                    }
+                    sender.write(`The name ${parts[1]} is already in use.\n`);
                     break;
 
                 case "/help":
-                    sender.write("command options are: /kick {name} (kicks selected client from server), /end (leaves server), /w {name} {message} (talks to speciffied client), /clientlist (lists users), /username {name} (changes username)")
+                    sender.write("command options are: /kick {name} {admin password} (kicks selected client from server), /end (leaves server), /w {name} {message} (talks to speciffied client), /clientlist (lists users), /username {name} (changes username)\n")
                     break;
 
                 default:
                     sender.write("Unknown command\n");
             }
             return;
+        } else {
+            sendMost(`${sender.username}: ${message}`, sender, clients);
         }
-        sendMost(message, id);
     });
 
     sender.on("end", () => {
-        clients.delete(id);
+        sender.write("/end");
+        sender.end();
+        sender.destroy();
     });
 
     sender.on("error", () => {
-        clients.delete(id);
+        clients.delete(sender);
     });
 });
 

@@ -13,16 +13,21 @@ const client = net.createConnection(5000, ()=> {
 client.setEncoding("utf-8");
 client.on("data", (data)=> {
     console.log(data);
+    if (data === "Goodbye!\n"){
+        rl.close();
+    }
 })
 
 console.log('/help for options')
-rl.on('line', (answer) => {
-
-        while (answer !== "/end"){
-            client.write(answer);
-            rl.prompt();
-            return;
-        }
-        client.write(answer);
+rl.on("line", (answer) => {
+    if(answer !== "/end"){
+        client.write(answer+"\n");
+        rl.setPrompt("\n");
+        rl.prompt();
+        return;
+    }
+    client.write("/end\n");
     rl.close();
 });
+
+rl._writeToOutput = function () {};

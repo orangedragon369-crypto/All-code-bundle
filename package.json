@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.22",
+    "jasmine": "^5.12.0",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "jsdom": "^27.3.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "genkey": "^1.0.11",
+    "openpgp": "^6.3.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}

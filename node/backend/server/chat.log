@@ -3,28 +3,213 @@ Client 1 connected
 Client 2 connected
 Client 0 connected
 Client 1 connected
-0 sent: /kick 1
-undefined has been kicked from the chat by 0.
-0 sent: /kick 1
+Client 2 connected
+0 sent: hi
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
 0 sent: /end
 0 has left the chat.
 Client 0 connected
 Client 1 connected
-1 sent: /kick 0
-[object Object] has been kicked from the chat by 1.
+Client 2 connected
+2 has left the chat.
+2 sent: /end
 Client 0 connected
 Client 1 connected
-1 sent: /kick 0
-0 has been kicked from the chat by 1.
-Client 0 connected
-0 sent: /help
+Client 2 connected
 Client 0 connected
 Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+2 sent: /end
+2 has left the chat.
+Client 0 connected
+Client 1 connected
+Client 2 connected
+0 sent: /end
+0 has left the chat.
+Client 0 connected
+Client 1 connected
+Client 2 connected
+1 sent: hi
+0 sent: /clientlist
+0 sent: /w 1
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+1 sent: hi
+1 sent: /w 2
+1 sent: /clientlist
+1 sent: /username cat
+0 sent: /w cat hi
+0 sent: hi
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+1 sent: /w
+Client 0 connected
+Client 1 connected
+Client 2 connected
+2 sent: /help
+0 sent: hoi
+Client 0 connected
+Client 1 connected
+Client 2 connected
+2 sent: hi
+Client 0 connected
+Client 1 connected
+Client 2 connected
+1 sent: hi
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+1 sent: hihi
+0 sent: no
+Client 0 connected
+Client 1 connected
+Client 2 connected
+0 sent: hi
+0 sent: no
+Client 0 connected
+Client 1 connected
+Client 2 connected
+0 sent: no
+Client 0 connected
+Client 1 connected
+Client 2 connected
+0 sent: hi
+0 sent: no
+0 sent: bye
+0 sent: /end
+0 has left the chat.
+Client 0 connected
+Client 1 connected
+Client 2 connected
+2 sent: /end
+2 has left the chat.
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+1 sent: /kick 1 no
+1 sent: /kick 2
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+1 sent: /kick 2 adminPassword
+2 has been kicked from the chat by 1.
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+2 sent: hi
+2 sent: /end
+2 has left the chat.
+0 sent: /clientlist
+Client 0 connected
+Client 1 connected
+Client 2 connected
 1 sent: /end
 1 has left the chat.
-0 sent: /end
-0 has left the chat.
+0 sent: .clientlist
+0 sent: /clientlist
+0 sent: /bye
+Client 0 connected
+Client 1 connected
 Client 2 connected
-Client 3 connected
-Client 4 connected
-Client 5 connected
+1 sent: /end
+1 has left the chat.
+0 sent: /client;ist
+0 sent: /clientlist
+Client 0 connected
+Client 1 connected
+Client 2 connected
+2 sent: /end
+2 has left the chat.
+0 sent: /clientlist
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+Client 0 connected
+Client 1 connected
+Client 2 connected
+1 has left the chat.
+1 sent: /end
+0 sent: /clientlist
+0 sent: /kick 2 adminPassword
+2 has been kicked from the chat by 0.
+Client 0 connected
+Client 1 connected
+Client 2 connected
+0 sent: /kick 2 adminPassword
+2 has been kicked from the chat by 0.
+1 sent: /end
+1 has left the chat.
+0 sent: /clientlist
+Client 0 connected
+Client 1 connected
+Client 2 connected
+1 sent: /kick 2 adminPassword
+2 has been kicked from the chat by 1.
+1 sent: /clientlist
