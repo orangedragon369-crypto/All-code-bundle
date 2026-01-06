@@ -1,5 +1,5 @@
 import "../style/index.css";
-import SectionTab from "./pagePieces/info/SectionTab";
+import SectionTab from "./pagePieces/info/SectionTab.jsx";
 import SingleInfoData from "./pagePieces/info/SingleInfoData.jsx";
 import OneTypeSort from "./pagePieces/info/OneTypeSort.jsx";
 import Info from "./pagePieces/info/info.jsx";
