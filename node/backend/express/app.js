@@ -1,9 +1,26 @@
 import express from 'express';
+//import session from 'express-session';
 import fs from 'fs';
+//import passport from 'passport';
 
 const app = express();
 const port = process.env.port || 3000;
+ /*
+start here to configureServer =>
+    app.use(passport.initialize());
+    app.use(passport.session());
+end
 
+configureServer();
+passportConfig(passport);
+createRoutes();
+
+app.use
+Start here to createRoutes => 
+    app.use("/auth", authRoutes(express, passport));
+
+end
+ */
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 app.use(express.static('./public'));
@@ -30,23 +47,26 @@ app.post('/user', (req, res) => {
     res.send(`POST request recived. Now creating ${name} with email ${email} and password ${password} on ${new Date()} `)
 });
 
-app.get('/{apple}pie/:count', (req, res)=>{
-    const userId = req.params.count;
-    res.send(`Pie requested: ${userId}`)
-});
-
-app.get(`/.*fly$/`, (req, res)=>{
-    res.send(`/.*fly$`);
-});
-
-app.get(`/classTime/:from-:to`, (req,res)=>{
-    let from = req.params.from;
-    let to = req.params.to;
-    let msg = `Class begins at ${from}. Class ends at ${to}.`;
-    console.log(req.params);
-    res.send(`${msg}`);
-})
-
 app.listen(port, ()=>{
     console.log(`server is runnning on http://localhost:${port}`);
 });
+
+function configureServer(){
+
+}
+
+function createRoutes(){
+
+}
+
+/*notes:
+app.get(
+
+`/.*fly$/`, (req, res)=>{
+    res.send(`/.*fly$`);
+
+`/{my}classTime/:from-:to`, (req,res)=>{
+    let from = req.params.from;
+    let to = req.params.to;
+});    
+*/

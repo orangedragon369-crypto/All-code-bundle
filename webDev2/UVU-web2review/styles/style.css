@@ -1,0 +1,34 @@
+th {
+  color: #9a1904;
+}
+
+.cont {
+  display: flex;
+}
+.cont div {
+  border: 1px #2b4efd solid;
+  padding: 8px;
+  margin: 8px;
+}
+
+#body1 {
+  background-color: #68c824;
+}
+
+#body2 {
+  background-color: #2b4efd;
+  color: #ffffff;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+#body2 a {
+  color: #68c824;
+}
+
+#body3 {
+  background-color: #9a1904;
+  color: #ffffff;
+  font-family: "Courier New", Courier, monospace;
+}
+#body3 a {
+  color: #68c824;
+}/*# sourceMappingURL=style.css.map */

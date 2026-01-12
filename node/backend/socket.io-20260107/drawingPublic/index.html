@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Socket.IO whiteboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="height: 100%;">
+
+  <canvas class="whiteboard" ></canvas>
+
+  <div class="colors">
+    <div class="color black"></div>
+    <div class="color red"></div>
+    <div class="color green"></div>
+    <div class="color blue"></div>
+    <div class="color yellow"></div>
+  </div>
+
+  <div id="chatFrame" style="width: 20vw;height: 100vh;margin-left: 80vw;position: absolute;">
+    <h1>Socket.IO Chat</h1>
+    <div id="nickNameDiv">
+      <label for="userNameInput">User Name</label>
+      <input type="text" name="userName" id="userNameInput" />
+      <button id="submitNickName">Submit</button>
+    </div>
+    <form id="messageForm" action="" style="display: none">
+      <label for="chatMessageInput">Message</label>
+      <input id="chatMessageInput" autocomplete="off" />
+      <button>Send</button>
+    </form>
+    <ul id="messageList"></ul>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+      let messageList = document.getElementById("messageList");
+      let messageForm = document.getElementById("messageForm");
+      let chatMessageInput = document.getElementById("chatMessageInput");
+
+      let userNameInput = document.getElementById("userNameInput");
+      let userName = "";
+
+      messageForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (chatMessageInput.value) {
+          socket.emit("client chat message", chatMessageInput.value);
+          let item = document.createElement("li");
+          item.textContent = `Me :  ${chatMessageInput.value}`;
+          messageList.appendChild(item);
+          chatMessageInput.value = "";
+        }
+        
+      });
+      socket.on("server chat message", (data) => {
+        let item = document.createElement("li");
+        item.textContent = `${data.userName}: ${data.msg}`;
+        messageList.appendChild(item);
+        window.scrollTo(0, document.body.scrollHeight);
+      });
+
+      const nickNameDiv = document.getElementById("nickNameDiv");
+      const submitNickName = document.getElementById("submitNickName");
+      submitNickName.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log(userName);
+        userName = userNameInput.value;
+        if (userName) {
+          socket.emit("newUser", userName);
+          //hide nickNameDiv
+          nickNameDiv.style.display = "none";
+          submitNickName.disabled = true;
+          //show messageForm
+          messageForm.style.display = "block";
+        }
+      });
+      socket.on("newUser", (name) => {
+        let item = document.createElement("li");
+        item.textContent = `New user: ${name} joined the chat`;
+        messageList.appendChild(item);
+        window.scrollTo(0, document.body.scrollHeight);
+      });
+    </script>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>
