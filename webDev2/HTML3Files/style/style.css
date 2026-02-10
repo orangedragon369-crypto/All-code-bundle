@@ -1,0 +1,12 @@
+.cont {
+  display: flex;
+  justify-content: space-around;
+}
+
+.medium {
+  width: 60vw;
+}
+
+.square {
+  list-style-type: square;
+}/*# sourceMappingURL=style.css.map */

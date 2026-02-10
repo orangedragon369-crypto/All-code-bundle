@@ -1,0 +1,104 @@
+{
+    "example":
+        {
+        "name": "card example",
+        "effect": "not a real card",
+        "rarity": "none",
+        "req": [
+            "Condition variables go here",
+            "not(groundTrue)",
+            "lastCard(jump)",
+            "pullAfter(groundTrue) <-- waiting till condition is true to start countdown(if absent countdown starts when played)",
+            "countdown: milliseconds before a card is pulled after playing the last"
+        ],
+        "countdown": 1000000000
+    },
+    "cards":[
+        {
+            "name": "short jump",
+            "effect": "a small jump",
+            "rarity": "common",
+            "req": ["groundTrue"],
+            "countdown": 0
+        },
+        {
+            "name": "medium jump",
+            "effect": "a medium jump",
+            "rarity": "common",
+            "req": ["groundTrue"],
+            "countdown": 0
+        },
+        {
+            "name": "tall jump",
+            "effect": "a tall jump",
+            "rarity": "uncommon",
+            "req": ["groundTrue"],
+            "countdown": 0
+        },
+        {
+            "name": "dash",
+            "effect": "does a short dash forward",
+            "rarity": "uncommon",
+            "req": ["not(wallTrue)"],
+            "countdown": 1000
+        },
+        {
+            "name": "sprint",
+            "effect": "does a sprint forward and a longer jump after",
+            "rarity": "common",
+            "req": [
+                "groundTrue",
+                "pullAfter(not(groundTrue))"
+            ],
+            "countdown": 1000
+        },
+        {
+            "name": "back dash",
+            "effect": "does a short dash backwards",
+            "rarity": "uncommon",
+            "req": ["not(wallTrue)"],
+            "countdown": 1000
+        },
+        {
+            "name": "extended dash",
+            "effect": "does a super long dash forwards",
+            "rarity": "rare",
+            "req": [
+                "wallTrue",
+                "groundTrue",
+                "delay(1000)"
+            ],
+            "countdown": 1000
+        },
+        {
+            "name": "short air jump",
+            "effect": "does a short jump in the air",
+            "rarity": "common",
+            "req": [
+                "not(groundTrue)",
+                "not(wallTrue)"
+            ],
+            "countdown": 500
+        },
+        {
+            "name": "medium air jump",
+            "effect": "does a medium jump in the air",
+            "rarity": "uncommon",
+            "req": [
+                "not(groundTrue)",
+                "not(wallTrue)"
+            ],
+            "countdown": 1000
+        },
+        {
+            "name": "tall air jump",
+            "effect": "does a tall jump in the air",
+            "rarity": "rare",
+            "req": [
+                "not(groundTrue)",
+                "not(wallTrue)"
+            ],
+            "countdown": 1500
+        }
+    ]
+}

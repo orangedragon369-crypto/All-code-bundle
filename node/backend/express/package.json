@@ -1,23 +1,23 @@
 {
-  "type": "module",
   "name": "webdev",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "keywords": [],
+  "homepage": "https://github.com/orangedragon369-crypto/All-code-bundle#readme",
+  "bugs": {
+    "url": "https://github.com/orangedragon369-crypto/All-code-bundle/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/orangedragon369-crypto/All-code-bundle.git"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/orangedragon369-crypto/All-code-bundle/issues"
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/orangedragon369-crypto/All-code-bundle#readme",
   "dependencies": {
     "express": "^5.2.1"
   }

@@ -7,13 +7,23 @@
         <div><a href="/"> Back </a></div>
         <br><br>
         <div>
-            <form action="/user" method="post">
-                <input type="text" name="email" placeholder="Email"><br>
-                <input type="text" name="firstname" placeholder="firstname"><br>
-                <input type="text" name="lastname" placeholder="lastname"><br>
-                <input type="text" name="password" placeholder="password"><br>
+            <form action="/add-card" method="post">
+                <input type="text" name="name" placeholder="name" required><br>
+                <input type="text" name="effect" placeholder="effect" required><br>
+                <input type="text" name="req" placeholder="req"><br>
+                <input type="number" name="delay" placeholder="delay"><br>
                 <button type="submit" value="Submit">Submit</button>
             </form>
+            <form action="/cardDelete" mathod="post">
+                <input type="text" name="name" placeholder="name" required>
+                <button type="submit" value="Submit">Remove</button>
+            </form>
+            <form action="/cardsDelete" mathod="post">
+                <input type="text" name="key" placeholder="key" required>
+                <input type="text" name="value" placeholder="value" required>
+                <button type="submit" value="Submit">Remove all</button>
+            </form>
+            <a href="/cards">List all  cards</a>
         </div>
     </body>
 </html>

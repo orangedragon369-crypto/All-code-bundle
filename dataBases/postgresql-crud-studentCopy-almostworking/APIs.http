@@ -1,0 +1,127 @@
+### Variables
+@baseUrl = http://localhost:3000
+@studentId = 1
+
+### ====================================
+### 1. CREATE (POST) - Add a new student
+### ====================================
+
+### Create Student 1
+POST {{baseUrl}}/api/students
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "age": 20,
+  "major": "Computer Science"
+}
+
+### Create Student 2
+POST {{baseUrl}}/api/students
+Content-Type: application/json
+
+{
+  "name": "Jane Smith",
+  "email": "jane@example.com",
+  "age": 21,
+  "major": "Engineering"
+}
+
+### Create Student 3
+POST {{baseUrl}}/api/students
+Content-Type: application/json
+
+{
+  "name": "Bob Wilson",
+  "email": "bob@example.com",
+  "age": 19,
+  "major": "Mathematics"
+}
+
+### ====================================
+### 2. READ (GET) - Retrieve students
+### ====================================
+
+### Get all students
+GET {{baseUrl}}/api/students
+
+### Get student by ID
+GET {{baseUrl}}/api/students/{{studentId}}
+
+### Get student by ID (change this to test different IDs)
+GET {{baseUrl}}/api/students/2
+
+### ====================================
+### 3. UPDATE (PUT) - Update entire student
+### ====================================
+
+### Update Student (Full Update)
+PUT {{baseUrl}}/api/students/{{studentId}}
+Content-Type: application/json
+
+{
+  "name": "John Updated",
+  "email": "john.updated@example.com",
+  "age": 21,
+  "major": "Data Science"
+}
+
+### ====================================
+### 4. UPDATE (PATCH) - Partial update
+### ====================================
+
+### Partial Update - Change only age
+PATCH {{baseUrl}}/api/students/{{studentId}}
+Content-Type: application/json
+
+{
+  "age": 22
+}
+
+### Partial Update - Change only major
+PATCH {{baseUrl}}/api/students/2
+Content-Type: application/json
+
+{
+  "major": "Physics"
+}
+
+### ====================================
+### 5. DELETE - Remove a student
+### ====================================
+
+### Delete a student
+DELETE {{baseUrl}}/api/students/{{studentId}}
+
+### Delete another student
+DELETE {{baseUrl}}/api/students/3
+
+### ====================================
+### PRACTICE EXERCISES
+### ====================================
+
+### Exercise 1: Try creating a student without required fields
+POST {{baseUrl}}/api/students
+Content-Type: application/json
+
+{
+  "name": "Test Student"
+}
+
+### Exercise 2: Try retrieving a non-existent student
+GET {{baseUrl}}/api/students/999
+
+### Exercise 3: Try deleting a non-existent student
+DELETE {{baseUrl}}/api/students/999
+
+### Exercise 4: Try creating a duplicate email
+POST {{baseUrl}}/api/students
+Content-Type: application/json
+
+{
+  "name": "Duplicate Email",
+  "email": "john@example.com",
+  "age": 25,
+  "major": "Biology"
+}

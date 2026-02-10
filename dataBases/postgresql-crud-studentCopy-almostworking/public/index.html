@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student CRUD Operations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student CRUD Operations</h1>
+
+        <div class="main-grid">
+            <!-- CREATE STUDENT -->
+            <div class="card">
+                <h2>CREATE - Add Student</h2>
+                <form id="createForm">
+                    <div class="form-group">
+                        <label for="createName">Name *</label>
+                        <input type="text" id="createName" placeholder="e.g., John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="createEmail">Email *</label>
+                        <input type="email" id="createEmail" placeholder="e.g., john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="createAge">Age *</label>
+                        <input type="number" id="createAge" placeholder="e.g., 20" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="createMajor">Major</label>
+                        <input type="text" id="createMajor" placeholder="e.g., Computer Science">
+                    </div>
+                    <button type="submit">Create Student</button>
+                    <div id="createOutput" class="output" style="display: none;"></div>
+                </form>
+            </div>
+
+            <!-- READ ALL STUDENTS -->
+            <div class="card">
+                <h2>READ - Get All Students</h2>
+                <button onclick="getAllStudents()">Fetch All Students</button>
+                <div id="allStudentsOutput" class="output" style="display: none;"></div>
+            </div>
+
+            <!-- READ BY ID -->
+            <div class="card">
+                <h2>READ - Get Student by ID</h2>
+                <div class="form-group">
+                    <label for="readId">Student ID</label>
+                    <input type="number" id="readId" placeholder="e.g., 1" value="1">
+                </div>
+                <button onclick="getStudentById()">Get Student</button>
+                <div id="readOutput" class="output" style="display: none;"></div>
+            </div>
+
+            <!-- UPDATE (PUT) -->
+            <div class="card">
+                <h2>UPDATE - Full Update (PUT)</h2>
+                <div class="form-group">
+                    <label for="putId">Student ID *</label>
+                    <input type="number" id="putId" placeholder="e.g., 1" required>
+                </div>
+                <div class="form-group">
+                    <label for="putName">Name *</label>
+                    <input type="text" id="putName" placeholder="New name" required>
+                </div>
+                <div class="form-group">
+                    <label for="putEmail">Email *</label>
+                    <input type="email" id="putEmail" placeholder="New email" required>
+                </div>
+                <div class="form-group">
+                    <label for="putAge">Age *</label>
+                    <input type="number" id="putAge" placeholder="New age" required>
+                </div>
+                <div class="form-group">
+                    <label for="putMajor">Major</label>
+                    <input type="text" id="putMajor" placeholder="New major">
+                </div>
+                <button onclick="updateStudentPut()">Update (PUT)</button>
+                <div id="putOutput" class="output" style="display: none;"></div>
+            </div>
+
+            <!-- UPDATE (PATCH) -->
+            <div class="card">
+                <h2>UPDATE - Partial Update (PATCH)</h2>
+                <div class="form-group">
+                    <label for="patchId">Student ID *</label>
+                    <input type="number" id="patchId" placeholder="e.g., 1" required>
+                </div>
+                <div class="form-group">
+                    <label for="patchField">Field to Update</label>
+                    <select id="patchField">
+                        <option value="name">Name</option>
+                        <option value="email">Email</option>
+                        <option value="age">Age</option>
+                        <option value="major">Major</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="patchValue">New Value *</label>
+                    <input type="text" id="patchValue" placeholder="Enter new value" required>
+                </div>
+                <button onclick="updateStudentPatch()">Update (PATCH)</button>
+                <div id="patchOutput" class="output" style="display: none;"></div>
+            </div>
+
+            <!-- DELETE STUDENT -->
+            <div class="card">
+                <h2>DELETE - Remove Student</h2>
+                <div class="form-group">
+                    <label for="deleteId">Student ID</label>
+                    <input type="number" id="deleteId" placeholder="e.g., 1" value="1">
+                </div>
+                <button class="delete-btn" onclick="deleteStudent()">Delete Student</button>
+                <div id="deleteOutput" class="output" style="display: none;"></div>
+            </div>
+
+            <!-- STUDENT LIST -->
+            <div class="card full-width">
+                <h2>Student Directory</h2>
+                <button onclick="getAllStudents()">Refresh Student List</button>
+                <div id="studentDirectory" class="student-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

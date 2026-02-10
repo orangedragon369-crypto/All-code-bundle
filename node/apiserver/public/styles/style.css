@@ -1,0 +1,25 @@
+.cont {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-space {
+  width: 20vw;
+  padding: 1.75em;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 80vh;
+}
+
+.content {
+  width: 100%;
+  overflow: hidden;
+}/*# sourceMappingURL=style.css.map */
