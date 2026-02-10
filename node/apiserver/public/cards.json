@@ -1,9 +1,12 @@
 {
-    "example":
+    "cardkorExample":
         {
         "name": "card example",
+        "id": -1,
+        "set": "example",
+        "subset": null,
         "effect": "not a real card",
-        "rarity": "none",
+        "rarity": "common",
         "req": [
             "Condition variables go here",
             "not(groundTrue)",
@@ -13,9 +16,12 @@
         ],
         "countdown": 1000000000
     },
-    "cards":[
+    "cardkor":[
         {
             "name": "short jump",
+            "id": 0,
+            "set": "jump",
+            "subset": "grounded",
             "effect": "a small jump",
             "rarity": "common",
             "req": ["groundTrue"],
@@ -23,6 +29,9 @@
         },
         {
             "name": "medium jump",
+            "id": 1,
+            "set": "jump",
+            "subset": "grounded",
             "effect": "a medium jump",
             "rarity": "common",
             "req": ["groundTrue"],
@@ -30,6 +39,9 @@
         },
         {
             "name": "tall jump",
+            "id": 2,
+            "set": "jump",
+            "subset": "grounded",
             "effect": "a tall jump",
             "rarity": "uncommon",
             "req": ["groundTrue"],
@@ -37,6 +49,9 @@
         },
         {
             "name": "dash",
+            "id": 3,
+            "set": "dash",
+            "subset": null,
             "effect": "does a short dash forward",
             "rarity": "uncommon",
             "req": ["not(wallTrue)"],
@@ -44,6 +59,9 @@
         },
         {
             "name": "sprint",
+            "id": 4,
+            "set": "dash",
+            "subset": null,
             "effect": "does a sprint forward and a longer jump after",
             "rarity": "common",
             "req": [
@@ -54,6 +72,9 @@
         },
         {
             "name": "back dash",
+            "id": 5,
+            "set": "dash",
+            "subset": null,
             "effect": "does a short dash backwards",
             "rarity": "uncommon",
             "req": ["not(wallTrue)"],
@@ -61,6 +82,9 @@
         },
         {
             "name": "extended dash",
+            "id": 6,
+            "set": "dash",
+            "subset": null,
             "effect": "does a super long dash forwards",
             "rarity": "rare",
             "req": [
@@ -72,6 +96,9 @@
         },
         {
             "name": "short air jump",
+            "id": 7,
+            "set": "jump",
+            "subset": "airborne",
             "effect": "does a short jump in the air",
             "rarity": "common",
             "req": [
@@ -82,6 +109,9 @@
         },
         {
             "name": "medium air jump",
+            "id": 8,
+            "set": "jump",
+            "subset": "airborne",
             "effect": "does a medium jump in the air",
             "rarity": "uncommon",
             "req": [
@@ -92,6 +122,9 @@
         },
         {
             "name": "tall air jump",
+            "id": 9,
+            "set": "jump",
+            "subset": "airborne",
             "effect": "does a tall jump in the air",
             "rarity": "rare",
             "req": [
@@ -99,6 +132,44 @@
                 "not(wallTrue)"
             ],
             "countdown": 1500
+        }
+    ],
+    "pokemon":[
+        {
+            "name": "lokix",
+            "id": 920.3,
+            "type":[
+                "dark"
+            ],
+            "hp": 120,
+            "stage": "stage 1",
+            "evolesFrom": "Nymble",
+            "species": "Grasshopper Pokemon",
+            "height": 1,
+            "weight": 17.5,
+            "ability": null,
+            "moves":[
+                {
+                    "name": "bounce",
+                    "cost": [
+                        "dark"
+                    ],
+                    "damage": 30,
+                    "other": "Switch this pokemon with 1 of your Benched Pokemon."
+                },
+                {
+                    "name": "Punishing Kick",
+                    "cost": [
+                        "dark",
+                        "dark"
+                    ],
+                    "damage": 10,
+                    "other": "This attack does 40 more damage for each damage counter on your opponent's Active Pokemon."
+                }
+            ],
+            "weakness":"grass",
+            "resistance": null,
+            "retreat": 1
         }
     ]
 }
