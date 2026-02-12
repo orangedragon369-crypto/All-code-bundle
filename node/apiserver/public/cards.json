@@ -1,67 +1,93 @@
 {
-    "cardkorExample":
-        {
-        "name": "card example",
-        "id": -1,
-        "set": "example",
-        "subset": null,
-        "effect": "not a real card",
-        "rarity": "common",
-        "req": [
-            "Condition variables go here",
-            "not(groundTrue)",
-            "lastCard(jump)",
-            "pullAfter(groundTrue) <-- waiting till condition is true to start countdown(if absent countdown starts when played)",
-            "countdown: milliseconds before a card is pulled after playing the last"
+    "cardkorUtils":{
+        "ex":{
+            "name": "card example",
+            "id": -1,
+            "set": "example",
+            "subset": null,
+            "effect": "not a real card",
+            "rarity": "common",
+            "req": [
+                "Condition variables go here",
+                "not(groundTrue)",
+                "lastCard(jump)",
+                "pullAfter(groundTrue) <-- waiting till condition is true to start countdown(if absent countdown starts when played)",
+                "countdown: milliseconds before a card is pulled after playing the last"
+            ],
+            "countdown": 1000000000
+        },
+        "sets": [
+            "jump grounded",
+            "jump airborne",
+            "dash",
+            "dive",
+            "utility"
         ],
-        "countdown": 1000000000
+        "types": [
+            "skill",
+            "attack",
+            "power",
+            "passive"
+        ],
+        "rarities": [
+            "common",
+            "uncommon.",
+            "rare"
+        ],
+        "removed": []
     },
-    "cardkor":[
-        {
+    "cardkor":[{
+
+        "0": {
             "name": "short jump",
             "id": 0,
             "set": "jump",
             "subset": "grounded",
+            "type": "skill",
             "effect": "a small jump",
             "rarity": "common",
             "req": ["groundTrue"],
             "countdown": 0
         },
-        {
+        "1":{
             "name": "medium jump",
             "id": 1,
             "set": "jump",
             "subset": "grounded",
+            "type": "skill",
             "effect": "a medium jump",
             "rarity": "common",
             "req": ["groundTrue"],
             "countdown": 0
         },
-        {
+        "2":{
             "name": "tall jump",
             "id": 2,
             "set": "jump",
             "subset": "grounded",
+            "type": "skill",
             "effect": "a tall jump",
-            "rarity": "uncommon",
+            "rarity": "common",
             "req": ["groundTrue"],
             "countdown": 0
         },
-        {
+        "3":{
             "name": "dash",
             "id": 3,
             "set": "dash",
             "subset": null,
+            "type": "skill",
             "effect": "does a short dash forward",
-            "rarity": "uncommon",
+            "rarity": "common",
             "req": ["not(wallTrue)"],
             "countdown": 1000
         },
-        {
+        "4":{
             "name": "sprint",
             "id": 4,
             "set": "dash",
             "subset": null,
+            "type": "skill",
             "effect": "does a sprint forward and a longer jump after",
             "rarity": "common",
             "req": [
@@ -70,23 +96,25 @@
             ],
             "countdown": 1000
         },
-        {
+        "5":{
             "name": "back dash",
             "id": 5,
             "set": "dash",
             "subset": null,
+            "type": "skill",
             "effect": "does a short dash backwards",
-            "rarity": "uncommon",
+            "rarity": "common",
             "req": ["not(wallTrue)"],
             "countdown": 1000
         },
-        {
+        "6":{
             "name": "extended dash",
             "id": 6,
             "set": "dash",
             "subset": null,
+            "type": "skill",
             "effect": "does a super long dash forwards",
-            "rarity": "rare",
+            "rarity": "uncommon",
             "req": [
                 "wallTrue",
                 "groundTrue",
@@ -94,11 +122,12 @@
             ],
             "countdown": 1000
         },
-        {
+        "7":{
             "name": "short air jump",
             "id": 7,
             "set": "jump",
             "subset": "airborne",
+            "type": "skill",
             "effect": "does a short jump in the air",
             "rarity": "common",
             "req": [
@@ -107,33 +136,76 @@
             ],
             "countdown": 500
         },
-        {
+        "8":{
             "name": "medium air jump",
             "id": 8,
             "set": "jump",
             "subset": "airborne",
+            "type": "skill",
             "effect": "does a medium jump in the air",
-            "rarity": "uncommon",
+            "rarity": "common",
             "req": [
                 "not(groundTrue)",
                 "not(wallTrue)"
             ],
             "countdown": 1000
         },
-        {
+        "9":{
             "name": "tall air jump",
             "id": 9,
             "set": "jump",
             "subset": "airborne",
+            "type": "skill",
             "effect": "does a tall jump in the air",
-            "rarity": "rare",
+            "rarity": "uncommon",
             "req": [
                 "not(groundTrue)",
                 "not(wallTrue)"
             ],
             "countdown": 1500
+        },
+        "10":{
+            "name": "smash down",
+            "id": 10,
+            "set": "dive",
+            "subset": null,
+            "type": "attack",
+            "effect": "launches downward dealing damage to enemies and terrain below",
+            "rarity": "uncommon",
+            "req": [
+                "not(groundTrue)",
+                "pullAfter(groundTrue)"
+            ],
+            "countdown": 750
+        },
+        "11":{
+            "name": "sprint master",
+            "id": 11,
+            "set": "dash",
+            "subset": null,
+            "type": "passive",
+            "effect": "passivly increases sprint speed and dash distance",
+            "rarity": "rare",
+            "req": [
+                "handContains(0, cardType('passive')))"
+            ],
+            "countdown": 0
+        },
+        "12":{
+            "name": "recursion",
+            "id": 12,
+            "set": "utility",
+            "subset": null,
+            "type": "power",
+            "effect": "on use choose a card in your hand, when played that card is returned to your hand",
+            "rarity": "rare",
+            "req": [
+                "handContains(1, not(cardType('passive')))"
+            ],
+            "countdown": 2000
         }
-    ],
+    
+    }],
     "pokemon":[
         {
             "name": "lokix",

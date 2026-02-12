@@ -12,6 +12,7 @@
   "dependencies": {
     "date-fns": "^4.1.0",
     "genkey": "^1.0.11",
+    "helmet": "^8.1.0",
     "openpgp": "^6.3.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
