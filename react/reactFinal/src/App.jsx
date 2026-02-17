@@ -1,5 +1,5 @@
-import { Routes, Route } from 'react-router-dom'
-import './style/App.css'
+import { Routes, Route } from 'react-router-dom';
+import './style/App.css'; 
 import NavBar from './pages/pagePieces/Navigation.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import Games from './pages/Games.jsx';
@@ -10,11 +10,11 @@ export default function App() {
   return (
     <>
       <NavBar/>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/games" element={<Games />} />
-          <Route path="/info" element={<InfoPage />} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/games" element={<Games />} />
+        <Route path="/info" element={<InfoPage />} />
+      </Routes>
     </>
   )
 }
