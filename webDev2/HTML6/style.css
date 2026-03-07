@@ -1,0 +1,36 @@
+.table {
+  width: 550px;
+  height: 225px;
+  border: 1px solid black;
+}
+.table * {
+  border: 1px solid rgb(160, 160, 160);
+}
+
+.course {
+  background-color: #CCCCCC;
+  width: 25%;
+}
+
+.day {
+  background-color: #99ff66;
+  width: 15%;
+}
+
+.center {
+  text-align: center;
+  margin: auto;
+}
+
+.two-tall {
+  grid-row: 2/span 2;
+}
+
+.four-wide {
+  grid-column: 2/span 4;
+}
+
+.five-wide {
+  -moz-column-span: 2/span 5;
+       column-span: 2/span 5;
+}/*# sourceMappingURL=style.css.map */

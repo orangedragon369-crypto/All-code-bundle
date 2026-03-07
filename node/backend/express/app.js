@@ -1,10 +1,9 @@
 import express from 'express';
 import mongoose from "mongoose";
 
-const dbURL = "mongodb+srv://benjaminludington3088:Orang3dra9on@cluster0.0iqaxnz.mongodb.net/mtech";
-//mongodb://localhost:27017/FunGames
+const dbURL = "mongodb://localhost:27017/FunGames";
 const app = express();
-const port = process.env.port || 3001;
+const port = process.env.PORT || 3003;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
@@ -19,17 +18,17 @@ db.once('open', () => {
     console.log('DB connected successfully')
 });
 
-const cardkorCardsSchema = new mongoose.Schema({
-    name: String,
-    effect: String,
-    req: Array,
-    delay: Number
+const peopleSchema = new mongoose.Schema({
+    FirstName: String,
+    LastName: String,
+    Email: String,
+    Age: Number
 });
-const CardkorCards = mongoose.model('CardkorCards', cardkorCardsSchema);
+const People = mongoose.model('people', peopleSchema);
 
 app.post('/add-card', async (req, res) => {
-    const {name, effect, require, delay } = req.body;
-    const newCard = new CardkorCards({name, effect, require, delay});
+    const { FirstName, LastName, Email, Age } = req.body;
+    const newCard = new People({ FirstName, LastName, Email, Age});
     try {
         const savedCard = await newCard.save();
         res.status(201).json(savedCard);
@@ -40,40 +39,48 @@ app.post('/add-card', async (req, res) => {
 
 app.get('/cards', async (req, res) => {
     try {
-        const cards = await CardkorCards.find();
-        res.status(200).json(cards);
+        const cards = await People.find(req.query);
+        res.json(cards);
     } catch (err) {
-        console.log(err)
+        console.log(err);
     }
-})
+});
 
 app.get('/card', async (req, res) => {
     try {
-        const cards = await CardkorCards.findOne();
+        const cards = await People.findOne();
         res.status(200).json(cards);
     } catch (err) {
         console.log(err)
     }
 })
 
-app.put('/cardsDelete', async (req, res) => {e
+app.delete('/cardsdelete', async (req, res) => {
     const {key, value} = req.body;
     try {
-        const cards = await CardkorCards.deleteMany({[key]: value});
+        const cards = await People.deleteMany({[key]: value});
         res.status(200).json(cards);
     } catch (err) {
         console.log(err)
     }
 })
 
-app.put('/cardDelete', async (req, res) => {
+app.delete('/carddelete', async (req, res) => {
     const {name} = req.body;
     try {
-        const cards = await CardkorCards.deleteOne({"name": name});
+        const cards = await People.deleteOne({"_id": name});
         res.status(200).json(cards);
     } catch (err) {
         console.log(err)
     }
+})
+
+app.put('/editperson', (req, res) => {
+
+})
+
+app.get('/cards', async (req, res) => {
+
 })
 
 

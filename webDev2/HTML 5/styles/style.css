@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #47810B;
+  color: #C3ED98;
+}
+
+a {
+  color: #F5A973;
+}
+a:hover {
+  color: #D38147;
+}
+a:active {
+  color: #6C358D;
+}
+a:visited {
+  color: #AB81C4;
+}
+
+.thumbnailLeft, .thumbnailright {
+  width: 100px;
+  height: 71px;
+}
+
+.thumbnailLeft {
+  float: left;
+  padding-left: 10px;
+}
+
+.thumbnailright {
+  float: right;
+  padding-right: 10px;
+}
+
+p img {
+  width: 350px;
+  height: 250px;
+}/*# sourceMappingURL=style.css.map */
