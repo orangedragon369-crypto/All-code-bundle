@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Day 1 – Cybersecurity Lab Submission</title>
+    </head>
+    <body>
+        <h1>Day 1 – Cybersecurity Lab Submission</h1>
+        <ol>
+            <li>
+                <h2>Environment Information</h2>
+                <ul>
+                    <li>Cloud provider: Google Cloud</li>
+                    <li>VM name: instance-20260226-160051</li>
+                    <li>Operating System version: Debian GNU/Linux 12 (bookworm)</li>
+                    <li>Public IP address: 136.119.114.30</li>
+                    <li>Private IP address: 192.168.200.4</li>
+                    <li>Hostname / FQDN: instance-20260226-160051.us-central1-c.c.devweb-488522.internal</li>
+                    <li>
+                        <div>List of installed services:</div>
+                        <ul>
+                            <li>apache-htcacheclean.service</li>
+                            <li>apache2.service                                        </li>
+                            <li>cron.service                                           </li>
+                            <li>dbus.service                                           </li>
+                            <li>exim4.service                                          </li>
+                            <li>getty@tty1.service                                     </li>
+                            <li>google-cloud-ops-agent-fluent-bit.service              </li>
+                            <li>google-cloud-ops-agent-opentelemetry-collector.service </li>
+                            <li>google-guest-agent-manager.service                     </li>
+                            <li>google-guest-compat-manager.service                    </li>
+                            <li>google-osconfig-agent.service                          </li>
+                            <li>haveged.service                                        </li>
+                            <li>mysql.service                                          </li>
+                            <li>networkd-dispatcher.service                            </li>
+                            <li>polkit.service                                         </li>
+                            <li>rsyslog.service                                        </li>
+                            <li>serial-getty@ttyS0.service                             </li>
+                            <li>ssh.service                                            </li>
+                            <li>systemd-journald.service                               </li>
+                            <li>systemd-logind.service                                 </li>
+                            <li>systemd-networkd.service                               </li>
+                            <li>systemd-resolved.service                               </li>
+                            <li>systemd-timesyncd.service                              </li>
+                            <li>systemd-udevd.service                                  </li>
+                            <li>unattended-upgrades.service                            </li>
+                            <li>user@1000.service </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2>VM & System Proof</h2>
+                <ul>
+                    <li><span>Screenshot of VM running:</span> <img src="images/Screenshot 2026-03-12 at 8.48.26 AM.png"></li>
+                    <li><span>Screenshot of SSH login:</span> <img src="images/Screenshot 2026-03-12 at 8.53.14 AM.png"></li>
+                    <li>Output of: uname -a: Linux instance-20260226-160051 6.1.0-43-cloud-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.162-1 (2026-02-08) x86_64 GNU/Linux</li>
+                    <li>Output of: ip addr: 
+                        <br>1: lo: &lt;LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+                        <br>    &emsp;link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+                        <br>    &emsp;inet 127.0.0.1/8 scope host lo
+                        <br>    &emsp;valid_lft forever preferred_lft forever
+                        <br>    &emsp;inet6 ::1/128 scope host noprefixroute 
+                        <br>    &emsp;valid_lft forever preferred_lft forever
+                        <br>2: ens4: &lt;BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1460 qdisc mq state UP group default qlen 1000
+                        <br>    &emsp;link/ether 42:01:c0:a8:c8:04 brd ff:ff:ff:ff:ff:ff
+                        <br>    &emsp;altname enp0s4
+                        <br>    &emsp;inet 192.168.200.4/32 metric 100 scope global dynamic ens4
+                        <br>    &emsp;valid_lft 2374sec preferred_lft 2374sec
+                        <br>    &emsp;inet6 fe80::4001:c0ff:fea8:c804/64 scope link 
+                        <br>    &emsp;valid_lft forever preferred_lft forever</li>
+                    <li>Output of: systemctl status apache2: 
+                        ● apache2.service - The Apache HTTP Server
+                        <br>&emsp;&emsp;        Loaded: loaded (/lib/systemd/system/apache2.service; enabled; preset: enabled)
+                        <br>&emsp;&emsp;        Active: active (running) since Mon 2026-03-02 16:41:25 UTC; 1 week 2 days ago
+                        <br>&emsp;&emsp;        Docs: https://httpd.apache.org/docs/2.4/
+                        <br>&emsp;&emsp;        Process: 1312146 ExecReload=/usr/sbin/apachectl graceful (code=exited, status=0/SUCCESS)
+                        <br>&emsp;    Main PID: 374932 (apache2)
+                        <br>&emsp;&emsp;        Tasks: 8 (limit: 2344)
+                        <br>&emsp;&emsp;        Memory: 22.1M
+                        <br>&emsp;&emsp;&emsp;            CPU: 1min 11.646s
+                        <br>&emsp;&emsp;        CGroup: /system.slice/apache2.service
+                        <br>&emsp;&emsp;&emsp;&emsp;                ├─ 374932 /usr/sbin/apache2 -k start
+                        <br>&emsp;&emsp;&emsp;&emsp;                ├─1312153 /usr/sbin/apache2 -k start
+                        <br>&emsp;&emsp;&emsp;&emsp;                ├─1312154 /usr/sbin/apache2 -k start
+                        <br>&emsp;&emsp;&emsp;&emsp;                ├─1312155 /usr/sbin/apache2 -k start
+                        <br>&emsp;&emsp;&emsp;&emsp;                ├─1312156 /usr/sbin/apache2 -k start
+                        <br>&emsp;&emsp;&emsp;&emsp;                ├─1312157 /usr/sbin/apache2 -k start
+                        <br>&emsp;&emsp;&emsp;&emsp;                ├─1313632 /usr/sbin/apache2 -k start
+                        <br>&emsp;&emsp;&emsp;&emsp;                └─1322115 /usr/sbin/apache2 -k start
+                        <br>
+                        <br>&emsp;    Mar 08 00:00:10 instance-20260226-160051 systemd[1]: Reloading apache2.service - The Apache HTTP Server...
+                        <br>&emsp;    Mar 08 00:00:11 instance-20260226-160051 systemd[1]: Reloaded apache2.service - The Apache HTTP Server.
+                        <br>&emsp;    Mar 09 00:00:04 instance-20260226-160051 systemd[1]: Reloading apache2.service - The Apache HTTP Server...
+                        <br>&emsp;    Mar 09 00:00:04 instance-20260226-160051 systemd[1]: Reloaded apache2.service - The Apache HTTP Server.
+                        <br>&emsp;    Mar 10 00:00:15 instance-20260226-160051 systemd[1]: Reloading apache2.service - The Apache HTTP Server...
+                        <br>&emsp;    Mar 10 00:00:15 instance-20260226-160051 systemd[1]: Reloaded apache2.service - The Apache HTTP Server.
+                        <br>&emsp;    Mar 11 00:00:04 instance-20260226-160051 systemd[1]: Reloading apache2.service - The Apache HTTP Server...
+                        <br>&emsp;    Mar 11 00:00:05 instance-20260226-160051 systemd[1]: Reloaded apache2.service - The Apache HTTP Server.
+                        <br>&emsp;    Mar 12 00:00:12 instance-20260226-160051 systemd[1]: Reloading apache2.service - The Apache HTTP Server...
+                        <br>&emsp;    Mar 12 00:00:12 instance-20260226-160051 systemd[1]: Reloaded apache2.service - The Apache HTTP Server.</li>
+                </ul>
+            </li>
+            <li>
+                <h2>Web Server Proof</h2>
+                <ul>
+                    <li>Screenshot showing Apache installed: <img src="images/Screenshot 2026-03-12 at 9.06.22 AM.png"></li>
+                    <li>Screenshot of "Hello World" web page: <img src="images/Screenshot 2026-03-12 at 9.25.51 AM.png"></li>
+                    <li>Website accessible via Public IP: <a href="http://136.119.114.30/">http://136.119.114.30/</a></li>
+                    <li>Website accessible via DNS hostname: <a href="http://home.mycybersecurityclass.com/">http://home.mycybersecurityclass.com/</a></li>
+                </ul>
+            </li>
+            <li>
+                <h2>DNS Configuration</h2>
+                <ul>
+                    <li>Screenshot of DNS Zone: </li>
+                    <li>Screenshot of A record: </li>
+                    <li>Screenshot of NS record: <img src="images/Screenshot 2026-03-12 at 9.31.06 AM.png"></li>
+                    <li>Output of: nslookup yourdomain.com or dig yourdomain.com: 
+                        <br>Server:		205.118.215.90
+                        <br>Address:	205.118.215.90#53
+<br>
+                        <br>Non-authoritative answer:
+                        <br>Name:	home.mycybersecurityclass.com
+                        <br>Address: 136.119.114.30
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2>Written Security Reflection (Required)</h2>
+                <p> 
+                    <br>Answer the following questions in paragraph form:
+                    <br>What are the biggest security risks in your current setup?
+                    <br>Why is exposing SSH (port 22) risky?
+                    <br>What does NAT protect you from?
+                    <br>What would you change to make this production-ready?
+                    <br>If you were an attacker, what would you target first?
+                </p>
+            </li>
+        </ol>
+    
+        
+
+        
+    </body>
+</html>

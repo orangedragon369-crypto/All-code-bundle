@@ -5,6 +5,12 @@
     </head>
     <body>
         <div>
+            <h2>Find By Name</h2>
+            <form action="/cards" method="get">
+                <input type="text" name="FirstName" placeholder="First Name" required><br>
+                <input type="text" name="LastName" placeholder="Last Name" required><br>
+                <button type="submit" value="Submit">Find</button>
+            </form>
             <h2>Create Person</h2>
             <form action="/add-card" method="post">
                 <input type="text" name="FirstName" placeholder="First Name" required><br>
@@ -13,13 +19,22 @@
                 <input type="number" name="Age" placeholder="Age"><br>
                 <button type="submit" value="Submit">Submit</button>
             </form>
+            <h2>Edit Person</h2>
+            <form action="/edit-card" method="put">
+                <input type="text" name="id" placeholder="Person's id" required><br>
+                <input type="text" name="FirstName" placeholder="First Name" required><br>
+                <input type="text" name="LastName" placeholder="Last Name" required><br>
+                <input type="text" name="Email" placeholder="Email"><br>
+                <input type="number" name="Age" placeholder="Age"><br>
+                <button type="submit" value="Submit">Submit</button>
+            </form>
             <h2>Delete person</h2>
-            <form action="/cardDelete" mathod="post">
+            <form action="/cardDelete" mathod="delete">
                 <input type="text" name="name" placeholder="_id" required>
                 <button type="submit" value="Submit">Remove</button>
             </form>
             <h2>Delete people</h2>
-            <form action="/cardsDelete" mathod="post">
+            <form action="/cardsDelete" mathod="delete">
                 <input type="text" name="key" placeholder="key" required>
                 <input type="text" name="value" placeholder="value" required>
                 <button type="submit" value="Submit">Remove all</button>

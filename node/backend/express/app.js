@@ -37,6 +37,14 @@ app.post('/add-card', async (req, res) => {
     }
 })
 
+app.put('/edit-card', (req, res) => {
+    const { id, FirstName, LastName, Email, Age } = req.body;
+    db.products.updateOne(
+        { _id: id }, 
+        { $set: { FirstName: FirstName, LastName: LastName, Email: Email, Age: Age}}
+    )
+})
+
 app.get('/cards', async (req, res) => {
     try {
         const cards = await People.find(req.query);
