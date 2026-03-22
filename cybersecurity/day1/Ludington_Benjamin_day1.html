@@ -126,17 +126,16 @@
                 </ul>
             </li>
             <li>
-                <h2>Written Security Reflection (Required)</h2>
+                <h2>Written Security Reflection</h2>
                 <p> 
-                    
-                    <br>Answer the following questions in paragraph form:
-                    <br>What are the biggest security risks in your current setup?
-                    <br>Why is exposing SSH (port 22) risky?
-                    <br>What does NAT protect you from?
-                    <br>What would you change to make this production-ready?
-                    <br>If you were an attacker, what would you target first?
+                    The biggest security risk with my current setup is the exposed services such as ssh. <br> 
+                    Having the ssh specifically exposed is dangerous because it means attackers can directly interface with the server.<br>
+                    NAT protects from direct inbound connections, basic network Scanning, and some automated attacks.<br>
+                    To make the page product ready I would add an actual product and its requirements, then dissable unused services, add a firewall, make mysql local only access, and use ssh keys instead of a password.<br>
+                    If I were an attacker I would target the open services like ssh or mysql and trying common passwords and usernames.
                 </p>
             </li>
         </ol>
+        <a href="../Ludington_Benjamin_index.html">Home</a>
     </body>
 </html>
