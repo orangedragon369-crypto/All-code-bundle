@@ -1,9 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Day 2</title>
+        <title>Day 2 - Analyzing HTTP Traffic and Implementing Secure Web Server Configuration with Apache and SSL</title>
     </head>
     <body>
+        <h1>Day 2 - Analyzing HTTP Traffic and Implementing Secure Web Server Configuration with Apache and SSL</h1>
+        <h2>Deliverable A — HTTP Traffic Capture</h2>
+        <p>
+            POST Request:  45.88.110.44 - - [02/Mar/2026:00:00:37 +0000] "POST /GponForm/diag_Form?images/ HTTP/1.1" 400 564 "-" "Hello, World"<br>
+            GET Request:  45.153.34.187 - - [02/Mar/2026:00:01:17 +0000] "GET / HTTP/1.1" 200 1797 "-" "Mozilla/5.0"
+
+        </p>
+        <p>
+For each request, include a screenshot and label:
+Method, URL/path, host
+Query parameters or form body
+Response status code
+At least 3 headers that matter for security (and why)
+        </p>
+        <p>
+Deliverable B - Headers
+Run header checks on BOTH:
+
+Your Apache VM (Day 1 server)
+The class lab target
+Include the command output (copy/paste) or screenshots as evidence:
+
+curl -Ivvv http://YOUR_VM_EXTERNAL_IP
+Explain what you see.
+        </p>
+        <p>
+Deliverable C — Three Security Practices
+Write up three security policies you could implement.
+
+For each finding include:
+
+Evidence: screenshot or copied output (curl/Burp/DevTools)
+Risk: 2–4 sentences describing why it matters
+Fix: 1–3 actionable steps to remediate
+        </p>
+        <p>
+Deliverable D — Apache SSL
+Using certbot install and implement SSL in your apache configuration. List the commands that you performed to ensure proper implementation.
+        </p>
+        <p>
+        root@instance-20260226-160051:/var/www/html# certbot
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Please enter the domain name(s) you would like on your certificate (comma and/or
+space separated) (Enter 'c' to cancel): home.mycybersecurityclass.com           
+Requesting a certificate for home.mycybersecurityclass.com
+
+Successfully received certificate.
+Certificate is saved at: /etc/letsencrypt/live/home.mycybersecurityclass.com/fullchain.pem
+Key is saved at:         /etc/letsencrypt/live/home.mycybersecurityclass.com/privkey.pem
+This certificate expires on 2026-06-20.
+These files will be updated when the certificate renews.
+Certbot has set up a scheduled task to automatically renew this certificate in the background.
+
+Deploying certificate
+Successfully deployed certificate for home.mycybersecurityclass.com to /etc/apache2/sites-available/000-default-le-ssl.conf
+Congratulations! You have successfully enabled HTTPS on https://home.mycybersecurityclass.com
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+If you like Certbot, please consider supporting our work by:
+ * Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+ * Donating to EFF:                    https://eff.org/donate-le
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+root@instance-20260226-160051:/var/www/html# 
+</p>
         <a href="../Ludington_Benjamin_index.html">Home</a>
     </body>
 </html>

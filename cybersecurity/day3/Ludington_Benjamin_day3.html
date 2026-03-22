@@ -1,9 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Day 3</title>
+        <title>Day 3 - Configuring a Secure Linux Environment for WordPress Deployment Using SSH, MySQL, and Apache</title>
+        <style>
+            img{
+                max-width: 100vw;
+            }
+        </style>
     </head>
     <body>
+        <h1>Day 3 - Configuring a Secure Linux Environment for WordPress Deployment Using SSH, MySQL, and Apache</h1>
+        <p>
+            <span>Commands used to create the Linux user:</span>
+            <ol>
+                <li>
+                    sudo adduser wordpress
+                </li>
+                <li>
+                    sudo usermod -aG sudo wordpress
+                </li>
+                <li>
+                    groups wordpress : returned --&gt;wordpress : wordpress sudo users
+                </li>
+            </ol>
+            <span>Screenshots showing the .ssh directory and authorized_keys file</span>
+            <img src="images/Screenshot 2026-03-21 at 9.54.00 PM.png"><br>
+            <span>Commands used to create the WordPress database and user</span>
+            <ol>
+                <li>mysql</li>
+                <li>CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</li>
+                <li>CREATE USER 'wp_user'@'localhost' IDENTIFIED BY 'StrongPasswordHere';</li>
+                <li>GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, INDEX 
+                    <br>ON wordpress.* TO 'wp_user'@'localhost';</li>
+                <li>FLUSH PRIVILEGES;</li>
+                <li>EXIT;</li>
+            </ol>
+            <span>A screenshot showing successful login as wp_user</span>
+            <img src="images/Screenshot 2026-03-21 at 10.17.37 PM.png"><br>
+            <span>A screenshot showing permissions on /var/www/wordpress</span>
+            <img src="images/Screenshot 2026-03-21 at 10.16.14 PM.png"><br>
+        </p>
         <a href="../Ludington_Benjamin_index.html">Home</a>
     </body>
 </html>
