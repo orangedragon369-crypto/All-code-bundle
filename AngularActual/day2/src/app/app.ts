@@ -9,5 +9,4 @@ import { MySecondComponent } from './my-second-component/my-second-component';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('day2');
 }

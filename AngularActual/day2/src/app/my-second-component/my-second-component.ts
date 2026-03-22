@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './my-second-component.html',
   styleUrl: './my-second-component.css',
 })
-export class MySecondComponent {}
+export class MySecondComponent {
+  character = 'https://cataas.com/cat';
+}
