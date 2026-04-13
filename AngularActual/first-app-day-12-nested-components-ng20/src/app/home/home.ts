@@ -14,7 +14,9 @@ import {HousingService} from '../housing.service';
       </section>
       <section class="results">
           @for (housingLocation of housingLocationList; track $index) {
-              <app-housing-location [housingLocation]="housingLocation"></app-housing-location>
+              <app-housing-location [housingLocation]="housingLocation">
+                
+              </app-housing-location>
           }
       </section>
   `,

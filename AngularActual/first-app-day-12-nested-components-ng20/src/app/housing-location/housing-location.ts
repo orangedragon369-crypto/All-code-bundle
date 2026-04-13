@@ -1,4 +1,4 @@
-import {Component, input} from '@angular/core';
+import {Component, input, output} from '@angular/core';
 import {HousingLocationInfo} from '../housinglocation';
 import {RouterLink} from "@angular/router";
 import {Stars} from "../stars/stars";
@@ -17,10 +17,10 @@ import {Stars} from "../stars/stars";
                   alt="Exterior photo of {{ housingLocation().name }}"
                   crossorigin
           />
-          <button class="primary hide" (click)=Hide() >Hide</button> <!-- TODO: Implement this button -->
+          <button class="primary hide" (click)="hideHome()">Hide</button> <!-- TODO: Implement this button -->
           <h2 class="listing-heading">{{ housingLocation().name }}</h2>
           <p class="listing-location">{{ housingLocation().city }}, {{ housingLocation().state }}</p>
-          <app-stars [value]="housingLocation().starValue"></app-stars> <!-- TODO: Implement this nested component -->
+          <app-stars [housingLocation().starValue]="housingLocation().starValue"></app-stars> <!-- TODO: Implement this nested component -->
           <a [routerLink]="['/details', housingLocation().id]">Learn More</a>
       </section>
   `,
@@ -28,8 +28,9 @@ import {Stars} from "../stars/stars";
 })
 export class HousingLocation {
   housingLocation = input.required<HousingLocationInfo>();
+  homeHidden = output<number>();
 
-  Hide(){
-
+  hideHome(){
+    this.homeHidden.emit(this.housingLocation().id);
   }
 }
