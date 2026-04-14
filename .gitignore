@@ -4,3 +4,4 @@ __tests__
 note.txt
 chrome-headless-shell-mac-arm64
 node_modules
+environment.ts
