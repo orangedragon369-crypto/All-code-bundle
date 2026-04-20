@@ -1,9 +1,18 @@
 // src/app/company/company.service.ts
 import {Injectable} from '@angular/core';
 import {Company} from '../models/company';
-import {Observable} from 'rxjs';
-import {deleteDoc, doc, docData, Firestore, setDoc, updateDoc} from '@angular/fire/firestore';
-
+import {
+  collection,
+  collectionData,
+  deleteDoc,
+  doc,
+  docData,
+  Firestore,
+  setDoc,
+  updateDoc
+} from '@angular/fire/firestore';
+import { from, Observable, of } from 'rxjs';
+import { catchError } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -11,32 +20,48 @@ export class CompanyService {
 
   constructor(private db: Firestore) {
   }
-
-  // A method to retrieve the document as an Observable
-  getCompanyObservable(): Observable<Company | undefined> {
-    return docData(this.getCompanyDocRef()) as Observable<Company>;
+  // A helper to get the document reference
+  private getCompanyDocRef(id: string) {
+    return doc(this.db, 'companies/' + id);
   }
 
-  // A method to save the company document
-  async saveCompany(company: Company) {
-    // setDoc() is the modern function to save a document
-    await setDoc(this.getCompanyDocRef(), company);
+  // A helper to get the collection reference
+  private getCompaniesColRef() {
+    return collection(this.db, 'companies');
+  }
+  // A method to retrieve the document as an Observable
+  getCompanyObservable(id: string): Observable<Company | undefined> {
+    return docData(this.getCompanyDocRef(id)) as Observable<Company>;
+  }
+
+  // A method to retrieve the collection as an Observable with IDs
+  getCompaniesObservable(): Observable<Company[]> {
+    // collectionData() gets the collection data and automatically
+    // includes the ID as a property of each document object.
+    return collectionData(this.getCompaniesColRef(), {idField: 'id'}) as Observable<Company[]>;
+  }
+  // saveCompany returns a Promise, so we can use .then() and .catch()
+  async saveCompany(company: Company, id: string) {
+    await setDoc(this.getCompanyDocRef(id), company)
+      .then(_ => console.log('Success on set'))
+      .catch(error => console.log('set', error));
+  }
+
+  // editCompany returns a Promise
+  async editCompany(company: any, id: string) {
+    await updateDoc(this.getCompanyDocRef(id), company)
+      .then(_ => console.log('Success on update'))
+      .catch(error => console.log('update', error));
   }
 
   // A method to perform a partial update (non-destructive)
-  async editCompany(company: any) {
-    // updateDoc() is the modern function for a partial update.
-    await updateDoc(this.getCompanyDocRef(), company);
+  async updateCompany(company: any, id: string) {
+    await updateDoc(this.getCompanyDocRef(id), company);
   }
-
-
-  // A helper to get the document reference
-  private getCompanyDocRef() {
-    return doc(this.db, 'companies/company');
-  }
-  // A method to delete a document
-  async deleteCompany() {
-    // deleteDoc() is the modern function for deleting a document.
-    await deleteDoc(this.getCompanyDocRef());
+  // deleteCompany returns a Promise
+  async deleteCompany(id: string) {
+    await deleteDoc(this.getCompanyDocRef(id))
+      .then(_ => console.log('Success on remove'))
+      .catch(error => console.log('remove', error));
   }
 }

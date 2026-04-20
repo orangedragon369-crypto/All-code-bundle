@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>JavaScript Practice 1- EventHandler</title>
+
+<script type="text/javascript">
+<!-- Beginning of JavaScript -
+
+	function MsgBox (textstring) {
+		alert ("You typed: " + textstring);
+		document.myForm.myText.value="";
+	}
+
+	function GetPetsName(pet){
+		let name = "";
+		while (name === "") name = prompt(`What is your ${pet}'s name?`);
+		pet += ` named ${name}`;
+		if (pet == "none") {
+			alert("You have no pet and are a failure.");
+			return;
+		}
+		alert(`The ${pet} is yours!`);
+		return;
+	}
+
+// - End of JavaScript - -->
+</script>
+
+</head>
+
+
+<body>
+
+	<form name="myForm">
+		<input name="myText"  type="Text" placeholder="My pet is a..." />
+		<input name="submit" type="Button" value="Show Me" onmouseover="GetPetsName(myForm.myText.value);" />
+	</form>
+
+</body>
+</html>
