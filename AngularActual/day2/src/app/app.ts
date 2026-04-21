@@ -1,12 +1,17 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MySecondComponent } from './my-second-component/my-second-component';
+import { OpenCloseComponent } from './open-close/open-close';
+import { InsertRemoveComponent } from './insert-remove/insert-remove';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MySecondComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
+  imports: [ RouterOutlet, OpenCloseComponent, InsertRemoveComponent ],
+  animations: [
+    // animation triggers go here
+  ]
 })
+
 export class App {
 }

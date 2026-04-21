@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MySecondComponent } from './my-second-component';
+import { InsertRemove } from './insert-remove';
 
-describe('MySecondComponent', () => {
-  let component: MySecondComponent;
-  let fixture: ComponentFixture<MySecondComponent>;
+describe('InsertRemove', () => {
+  let component: InsertRemove;
+  let fixture: ComponentFixture<InsertRemove>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MySecondComponent],
+      imports: [InsertRemove],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(MySecondComponent);
+    fixture = TestBed.createComponent(InsertRemove);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

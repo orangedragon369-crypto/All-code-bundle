@@ -1,0 +1,33 @@
+:host {
+    display: block;
+    margin: 1em;
+  }
+  
+  .insert-remove-container {
+    border: 1px solid #dddddd;
+    margin-top: 1em;
+    padding: 20px 20px 0px 20px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  /* Enter animation: fade in over 1 second */
+  .fade-in {
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  /* Leave animation: fade out over 1 second */
+  .fade-out {
+    animation: fadeOut 1s ease forwards;
+  }
+  
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }

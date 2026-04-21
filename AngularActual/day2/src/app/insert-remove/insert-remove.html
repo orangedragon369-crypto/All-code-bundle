@@ -1,0 +1,12 @@
+<nav>
+    <button (click)="toggle()">Toggle Insert/Remove</button>
+  </nav>
+  
+  @if (isShown) {
+    <div
+      animate.enter="fade-in"
+      animate.leave="fade-out"
+      class="insert-remove-container">
+      <p>The box is inserted</p>
+    </div>
+  }
