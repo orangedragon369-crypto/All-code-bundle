@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="scripts/renderHeader.js" type="module" defer></script>
+        <script src="scripts/game.js" type="module" defer></script>
+        <script src="https://kit.fontawesome.com/ed99046da8.js" crossorigin="anonymous"></script>
+        <title>Playing Monster Guess Game</title>
+    </head>
+    <body>
+        <header id="header">
+        </header>
+        <main class="cont">
+            <div class="names">
+                <h2>Monster List</h2>
+                <button onclick="
+                    alert(`The goal of the game is to get the monster's name correct. Click 'More info' to get additional hints about the monster. Be carefull thought, the more hints and the more specific the hint the less points you will get. A list of monsters can be found on the side. Good luck!`);">rules</button>
+                <ul id="monster-list">
+                </ul>
+            </div>
+            <div class="cont col">
+                <h3><button id="restart"><span>New Game&ensp;</span><i class="fa-solid fa-rotate-right"></i></button></h3>
+                <h1>Monster Guess</h1>
+                <h3 id="score"></h3>
+                <div id="info"></div>
+                <div>
+                    <div>
+                        <select id="hintType">
+                            <option value="ailment">Ailment</option>
+                            <option value="description">Description</option>
+                            <option value="location">Locations</option>
+                            <option value="parts">Parts</option>
+                            <option value="resistances">Resistances</option>
+                            <option value="Rewards">Rewards</option>
+                            <option value="variants">Variants</option>
+                            <option value="weakness">Weaknesses</option>
+                        </select>
+                        <button type="button" id="more">More info</button>
+                    </div>
+                    <input type="text" id="answer" placeholder="Enter your guess here">
+                    <button type="button" id="submit">Submit</button>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

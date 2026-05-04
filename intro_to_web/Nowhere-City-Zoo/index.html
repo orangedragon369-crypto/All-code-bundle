@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Nowhere Zoo Exhibit – Baboons</title>
-  <script defer src="javascript/script.js"></script>
-  <link rel="stylesheet" href="css/style.css">
+  <script defer src="./javascript/script.js"></script>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <header>
@@ -68,4 +69,15 @@
   </footer>
   
 </body>
+<script>
+  if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then((registration) => {
+      console.log('Service Worker registered with scope:', registration.scope);
+    })
+    .catch((error) => {
+      console.error('Service Worker registration failed:', error);
+    });
+}
+</script>
 </html>
