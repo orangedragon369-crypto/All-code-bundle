@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- TemplateBeginEditable name="doctitle" -->
+        <title>Rent-A-Pet Home</title>
+        <!-- TemplateEndEditable -->
+        <link rel="stylesheet" href="../styles/style.css">
+        <script defer src="../Scripts/myScript.js"></script>
+    <!-- TemplateBeginEditable name="head" -->
+    <!-- TemplateEndEditable -->
+    </head>
+    <body onload="preloadImages();">
+        <header>
+            <img src="../Images/Rent-A-Pet-Logo1.png" width="133" height="126" 
+            id="logoI" alt="logo" style="border:none;" onMouseOver="document.getElementById('logoI').src=logo2.src;"
+            onMouseOut="document.getElementById('logoI').src=logo1.src;">
+            <span><img src="../Images/Rent-A-PetBannerR.jpg" alt="Rent-A-Pet with a parrot mouth on P" width="500"></span>
+            <nav>
+                <a href="../Home.html" class="hover-button">Home</a>
+                <a href="../AboutUs.html" class="hover-button">About Us</a>
+                <a href="../Tributes.html" class="hover-button">Tributes</a>
+                <a href="" class="hover-button">Survey</a>
+                <a href="" class="hover-button">Favorites</a>
+            </nav>
+        </header>
+        <!-- TemplateBeginEditable name="PageContent" -->
+        <section>
+          <h1>Welcome to Rent A Pet!</h1>
+          <article>
+            <p> If you love to interact with pets like we do, you should enjoy looking
+              around this site. Take a look at our Pet Profiles and take the
+              opportunity to complete our survey. </p>
+            <h2><span>Dog Showcase -&ensp;</span><span id="bottomText">Dog Performing a Trick</span></h2>
+            <div id="thumbs"> <img src="../Images/ThumbNail/Image1Sm.jpg" alt="Dog Performing a Trick" onMouseOver="swapImage(0);" /> <img src="../Images/ThumbNail/Image2Sm.jpg" alt="Two hunting Dogs" onMouseOver="swapImage(1);" /> <img src="../Images/Thumbnail/Image3Sm.jpg" alt="Dog and two kids" onMouseOver="swapImage(2);" /> <img src="../Images/Thumbnail/Image4Sm.jpg" alt="Woman and Dog" onMouseOver="swapImage(3);" /> </div>
+            <div id="image"> <img id="theImage" src="../Images/FullSize/Image1Lg.jpg" alt="Dog Performing a Trick" /> </div>
+            <h2>Jason Hutchingson:</h2>
+            <img src="../images/FullSize/GermanShephard2Lg.jpg" class="imgR tall" alt="woman and german shepard">
+            <blockquote> I'm a single college guy and live in an apartment with 3 other guys. <br>
+              I always wanted to have a large breed of dog that would be a companion to take running or play catch with in the park.  
+              With the help of Rent A Pet, I found Kamaikaze, a German Shephard.  He loves to run in the summer and even cross country ski in the winter. <br>
+              <br>
+              The best thing Kazi likes to do is play Frisbee and run through an obstacle course.  I always attract the attention of girls in the park when we go there.  I even met my fiance, Janice, when she joined Kazi and me in a heated game of keep away.  One day I will have a home where I can have a yard to keep my own dog.  Until that time, I can still enjoy the companionship of a good dog.<br>
+              <br>
+              Thanks to Rent A Pet,<br>
+              Jason Hutchingson </blockquote>
+            <a href="../Tributes.html" class="hover-button">more >></a> </article>
+        </section>
+        <!-- TemplateEndEditable -->
+<footer>
+  <p>Webmaster Email: Orangedragon369@gmail.com</p>
+            <p>
+                This web site has been created solely for educational purposes.
+            </p>
+        </footer>
+    </body>
+</html>

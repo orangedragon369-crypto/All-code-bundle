@@ -1,0 +1,50 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+*{
+  font-family: serif;
+}
+
+article{
+  width: 95%;
+}
+
+.top-corner, .tall, .hover-button, nav, footer, #image, #bottomText {
+  display: none;
+  visibility: hidden;
+}
+
+.tall{
+  width: 165px;
+  height: 250px;
+}
+
+section{
+  background: url("../Images/backimage.jpg");
+  padding: 5px;
+  width: 900px;
+  background-repeat: repeat-y;
+}
+
+main{
+  margin: 20px;
+  padding: 10px;
+}
+
+tr:nth-child(even){background-color: #ffd8d8;}
+
+td+td{
+  text-align: right;
+}
+table{
+  width: 100%;
+  padding: 5px;
+  font-size: large;
+  color: #000100;
+
+  caption{
+      font-size: larger;
+      font-weight: 600;
+  }
+}
