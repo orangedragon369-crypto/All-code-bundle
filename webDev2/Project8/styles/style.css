@@ -10,6 +10,9 @@ body {
   top: 0;
   right: 0; }
 
+.ceter {
+  margin: auto; }
+
 .img {
   padding: 10px;
   height: 165px;
